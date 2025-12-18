@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <SourceFile>c:/Users/benja/Projects/pokemon/monogame/pokemon/Content/ice.mp3</SourceFile>
+  <SourceTime>2025-12-18T11:39:06.6879006+11:00</SourceTime>
+  <DestFile>c:/Users/benja/Projects/pokemon/monogame/pokemon/Content/bin/Windows/ice.xnb</DestFile>
+  <DestTime>2025-12-18T12:19:49.556351+11:00</DestTime>
+  <Importer>Mp3Importer</Importer>
+  <ImporterTime>2024-08-17T03:05:56+10:00</ImporterTime>
+  <Processor>SongProcessor</Processor>
+  <ProcessorTime>2024-08-17T03:05:56+10:00</ProcessorTime>
+  <Parameters>
+    <Key>Quality</Key>
+    <Value>Best</Value>
+  </Parameters>
+  <Dependencies />
+  <BuildAsset />
+  <BuildOutput>
+    <string>c:/Users/benja/Projects/pokemon/monogame/pokemon/Content/bin/Windows/ice.wma</string>
+  </BuildOutput>
+</PipelineBuildEvent>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <SourceFile>c:/Users/benja/Projects/pokemon/monogame/pokemon/Content/splash.wav</SourceFile>
+  <SourceTime>2025-12-18T11:38:47.15361+11:00</SourceTime>
+  <DestFile>c:/Users/benja/Projects/pokemon/monogame/pokemon/Content/bin/Windows/splash.xnb</DestFile>
+  <DestTime>2025-12-18T12:19:52.4083548+11:00</DestTime>
+  <Importer>WavImporter</Importer>
+  <ImporterTime>2024-08-17T03:05:56+10:00</ImporterTime>
+  <Processor>SoundEffectProcessor</Processor>
+  <ProcessorTime>2024-08-17T03:05:56+10:00</ProcessorTime>
+  <Parameters>
+    <Key>Quality</Key>
+    <Value>Best</Value>
+  </Parameters>
+  <Dependencies />
+  <BuildAsset />
+  <BuildOutput />
+</PipelineBuildEvent>
