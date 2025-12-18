@@ -169,6 +169,3 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
-
-# Project assets (raw sources, not built content)
-/sourceAssets/

@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SourceFileCollection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Profile>Reach</Profile>
+  <Platform>DesktopGL</Platform>
+  <Config />
+  <SourceFiles>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/data/maps/arena.tmx</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/data/maps/fire.tmx</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/data/maps/hospital.tmx</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/data/maps/hospital2.tmx</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/data/maps/house.tmx</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/data/maps/plant.tmx</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/data/maps/water.tmx</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/data/maps/world.tmx</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/data/tilesets/Grass.tsx</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/data/tilesets/indoor.tsx</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/data/tilesets/objects.tsx</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/data/tilesets/world.tsx</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/characters/blond.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/characters/fire_boss.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/characters/grass_boss.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/characters/hat_girl.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/characters/player.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/characters/purple_girl.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/characters/straw.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/characters/water_boss.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/characters/young_girl.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/characters/young_guy.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/attacks/explosion.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/attacks/fire.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/attacks/green.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/attacks/ice.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/attacks/scratch.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/attacks/splash.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/backgrounds/forest.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/backgrounds/ice.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/backgrounds/sand.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/icons/Atrox.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/icons/Charmadillo.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/icons/Cindrill.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/icons/Cleaf.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/icons/Draem.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/icons/Finiette.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/icons/Finsta.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/icons/Friolera.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/icons/Gulfin.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/icons/Ivieron.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/icons/Jacana.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/icons/Larvea.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/icons/Pluma.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/icons/Plumette.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/icons/Pouch.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/icons/Sparchu.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/monsters/Atrox.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/monsters/Charmadillo.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/monsters/Cindrill.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/monsters/Cleaf.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/monsters/Draem.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/monsters/Finiette.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/monsters/Finsta.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/monsters/Friolera.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/monsters/Gulfin.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/monsters/Ivieron.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/monsters/Jacana.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/monsters/Larvea.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/monsters/Pluma.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/monsters/Plumette.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/monsters/Pouch.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/monsters/Sparchu.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/objects/arean_fire.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/objects/arena_plant.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/objects/arena_water.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/objects/gate_pillar.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/objects/gate_top.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/objects/grass_ice.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/objects/grass.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/objects/grassrock1.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/objects/grassrock2.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/objects/green_tree_bushy.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/objects/green_tree_small.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/objects/green_tree.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/objects/hospital.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/objects/house_large_alt.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/objects/house_large.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/objects/house_small_alt.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/objects/house_small.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/objects/ice_tree.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/objects/icerock1.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/objects/icerock2.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/objects/palm_alt.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/objects/palm_small.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/objects/palm.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/objects/ruin_gate.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/objects/ruin_pillar_broke_alt.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/objects/ruin_pillar_broke.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/objects/ruin_pillar.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/objects/sand.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/objects/sandrock1.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/objects/sandrock2.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/objects/teal_tree_bushy.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/objects/teal_tree_small.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/objects/teal_tree.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/other/shadow.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/other/star animation/00002.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/other/star animation/00003.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/other/star animation/00004.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/other/star animation/00005.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/other/star animation/00006.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/other/star animation/00007.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/other/star animation/00008.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/other/star animation/00009.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/other/star animation/00010.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/other/star animation/00011.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/other/star animation/00012.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/other/star animation/00013.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/other/star animation/00014.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/other/star animation/00015.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/other/star animation/00016.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/other/star animation/00017.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/other/star animation/00018.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/other/star animation/00019.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/other/star animation/00020.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/other/star animation/00021.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/other/star animation/00022.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/other/star animation/00023.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/other/star animation/00024.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/other/star animation/00025.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/other/star animation/00026.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/other/star animation/00027.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/other/star animation/00028.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/other/star animation/00029.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/tilesets/coast.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/tilesets/indoor.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/tilesets/water/0.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/tilesets/water/1.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/tilesets/water/2.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/tilesets/water/3.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/tilesets/world.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/ui/arrows_highlight.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/ui/arrows.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/ui/attack.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/ui/cross.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/ui/defense.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/ui/energy.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/ui/hand_highlight.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/ui/hand.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/ui/health.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/ui/notice.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/ui/recovery.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/ui/shield_highlight.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/ui/shield.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/ui/speed.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/ui/star.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/ui/sword_highlight.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/graphics/ui/sword.png</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/audio/battle.ogg</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/audio/evolution.mp3</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/audio/explosion.wav</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/audio/fire.wav</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/audio/green.wav</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/audio/ice.mp3</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/audio/notice.wav</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/audio/overworld.ogg</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/audio/scratch.mp3</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/audio/splash.wav</File>
+  </SourceFiles>
+  <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+  </DestFiles>
+</SourceFileCollection>

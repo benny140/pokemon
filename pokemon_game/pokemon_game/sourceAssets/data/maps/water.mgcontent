@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <SourceFile>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/../../../sourceAssets/data/maps/water.tmx</SourceFile>
+  <SourceTime>2025-12-18T11:39:02.9883737+11:00</SourceTime>
+  <DestFile>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/bin/DesktopGL/../../../sourceAssets/data/maps/water.xnb</DestFile>
+  <DestTime>2025-12-18T14:02:08.5090905+11:00</DestTime>
+  <Importer>TiledMapImporter</Importer>
+  <ImporterTime>2025-11-29T19:05:08+11:00</ImporterTime>
+  <Processor>TiledMapProcessor</Processor>
+  <ProcessorTime>2025-11-29T19:05:08+11:00</ProcessorTime>
+  <Dependencies>
+    <string>c:\Users\benja\Projects\pokemon\sourceAssets\data\tilesets\world.tsx</string>
+    <string>c:\Users\benja\Projects\pokemon\sourceAssets\data\tilesets\objects.tsx</string>
+    <string>c:\Users\benja\Projects\pokemon\sourceAssets\data\tilesets\Grass.tsx</string>
+    <string>c:\Users\benja\Projects\pokemon\sourceAssets\data\tilesets\indoor.tsx</string>
+  </Dependencies>
+  <BuildAsset>
+    <string>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/bin/DesktopGL/../../../sourceAssets/data/tilesets/world_0.xnb</string>
+    <string>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/bin/DesktopGL/../../../sourceAssets/data/tilesets/objects_0.xnb</string>
+    <string>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/bin/DesktopGL/../../../sourceAssets/data/tilesets/Grass_0.xnb</string>
+    <string>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/bin/DesktopGL/../../../sourceAssets/data/tilesets/indoor_0.xnb</string>
+  </BuildAsset>
+  <BuildOutput />
+</PipelineBuildEvent>

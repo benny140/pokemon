@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <SourceFile>c:/Users/benja/Projects/pokemon/sourceAssets/data/tilesets/world.tsx</SourceFile>
+  <SourceTime>2025-12-18T11:39:01.1015509+11:00</SourceTime>
+  <DestFile>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/bin/DesktopGL/../../../sourceAssets/data/tilesets/world_0.xnb</DestFile>
+  <DestTime>2025-12-18T14:02:07.8375126+11:00</DestTime>
+  <Importer>TiledMapTilesetImporter</Importer>
+  <ImporterTime>2025-11-29T19:05:08+11:00</ImporterTime>
+  <Processor>TiledMapTilesetProcessor</Processor>
+  <ProcessorTime>2025-11-29T19:05:08+11:00</ProcessorTime>
+  <Dependencies>
+    <string>c:\Users\benja\Projects\pokemon\sourceAssets\data\tilesets\../../graphics/tilesets/world.png</string>
+  </Dependencies>
+  <BuildAsset>
+    <string>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/bin/DesktopGL/../../../sourceAssets/graphics/tilesets/world_0.xnb</string>
+  </BuildAsset>
+  <BuildOutput />
+</PipelineBuildEvent>
