@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <SourceFile>C:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/audio/overworld.ogg</SourceFile>
+  <SourceTime>2025-12-18T11:39:06.4784937+11:00</SourceTime>
+  <DestFile>C:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/bin/DesktopGL/Content/audio/overworld.xnb</DestFile>
+  <DestTime>2025-12-18T17:12:32.0222461+11:00</DestTime>
+  <Importer>OggImporter</Importer>
+  <ImporterTime>2025-10-21T01:25:32+11:00</ImporterTime>
+  <Processor>SongProcessor</Processor>
+  <ProcessorTime>2025-10-21T01:25:32+11:00</ProcessorTime>
+  <Parameters>
+    <Key>Quality</Key>
+    <Value>Best</Value>
+  </Parameters>
+  <Dependencies />
+  <BuildAsset />
+  <BuildOutput>
+    <string>C:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/bin/DesktopGL/Content/audio/overworld.ogg</string>
+  </BuildOutput>
+</PipelineBuildEvent>

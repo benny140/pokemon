@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <SourceFile>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/data/tilesets/indoor.tsx</SourceFile>
+  <SourceTime>2025-12-18T11:39:01.8446467+11:00</SourceTime>
+  <DestFile>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/bin/DesktopGL/data/tilesets/indoor.xnb</DestFile>
+  <DestTime>2025-12-18T16:58:58.3210517+11:00</DestTime>
+  <Importer>TiledMapTilesetImporter</Importer>
+  <ImporterTime>2025-11-29T19:05:08+11:00</ImporterTime>
+  <Processor>TiledMapTilesetProcessor</Processor>
+  <ProcessorTime>2025-11-29T19:05:08+11:00</ProcessorTime>
+  <Dependencies>
+    <string>c:\Users\benja\Projects\pokemon\pokemon_game\pokemon_game\Content\data\tilesets\../../graphics/tilesets/indoor.png</string>
+  </Dependencies>
+  <BuildAsset>
+    <string>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/bin/DesktopGL/graphics/tilesets/indoor_0.xnb</string>
+  </BuildAsset>
+  <BuildOutput />
+</PipelineBuildEvent>

@@ -14,127 +14,127 @@
 
 #---------------------------------- Content ---------------------------------#
 
-#begin ../../../sourceAssets/audio/battle.ogg
+#begin audio/battle.ogg
 /importer:OggImporter
 /processor:SongProcessor
 /processorParam:Quality=Best
-/build:../../../sourceAssets/audio/battle.ogg
+/build:audio/battle.ogg
 
-#begin ../../../sourceAssets/audio/evolution.mp3
+#begin audio/evolution.mp3
 /importer:Mp3Importer
 /processor:SongProcessor
 /processorParam:Quality=Best
-/build:../../../sourceAssets/audio/evolution.mp3
+/build:audio/evolution.mp3
 
-#begin ../../../sourceAssets/audio/explosion.wav
+#begin audio/explosion.wav
 /importer:WavImporter
 /processor:SoundEffectProcessor
 /processorParam:Quality=Best
-/build:../../../sourceAssets/audio/explosion.wav
+/build:audio/explosion.wav
 
-#begin ../../../sourceAssets/audio/fire.wav
+#begin audio/fire.wav
 /importer:WavImporter
 /processor:SoundEffectProcessor
 /processorParam:Quality=Best
-/build:../../../sourceAssets/audio/fire.wav
+/build:audio/fire.wav
 
-#begin ../../../sourceAssets/audio/green.wav
+#begin audio/green.wav
 /importer:WavImporter
 /processor:SoundEffectProcessor
 /processorParam:Quality=Best
-/build:../../../sourceAssets/audio/green.wav
+/build:audio/green.wav
 
-#begin ../../../sourceAssets/audio/ice.mp3
+#begin audio/ice.mp3
 /importer:Mp3Importer
 /processor:SongProcessor
 /processorParam:Quality=Best
-/build:../../../sourceAssets/audio/ice.mp3
+/build:audio/ice.mp3
 
-#begin ../../../sourceAssets/audio/notice.wav
+#begin audio/notice.wav
 /importer:WavImporter
 /processor:SoundEffectProcessor
 /processorParam:Quality=Best
-/build:../../../sourceAssets/audio/notice.wav
+/build:audio/notice.wav
 
-#begin ../../../sourceAssets/audio/overworld.ogg
+#begin audio/overworld.ogg
 /importer:OggImporter
 /processor:SongProcessor
 /processorParam:Quality=Best
-/build:../../../sourceAssets/audio/overworld.ogg
+/build:audio/overworld.ogg
 
-#begin ../../../sourceAssets/audio/scratch.mp3
+#begin audio/scratch.mp3
 /importer:Mp3Importer
 /processor:SongProcessor
 /processorParam:Quality=Best
-/build:../../../sourceAssets/audio/scratch.mp3
+/build:audio/scratch.mp3
 
-#begin ../../../sourceAssets/audio/splash.wav
+#begin audio/splash.wav
 /importer:WavImporter
 /processor:SoundEffectProcessor
 /processorParam:Quality=Best
-/build:../../../sourceAssets/audio/splash.wav
+/build:audio/splash.wav
 
-#begin ../../../sourceAssets/data/maps/arena.tmx
+#begin data/maps/arena.tmx
 /importer:TiledMapImporter
 /processor:TiledMapProcessor
-/build:../../../sourceAssets/data/maps/arena.tmx
+/build:data/maps/arena.tmx
 
-#begin ../../../sourceAssets/data/maps/fire.tmx
+#begin data/maps/fire.tmx
 /importer:TiledMapImporter
 /processor:TiledMapProcessor
-/build:../../../sourceAssets/data/maps/fire.tmx
+/build:data/maps/fire.tmx
 
-#begin ../../../sourceAssets/data/maps/hospital.tmx
+#begin data/maps/hospital.tmx
 /importer:TiledMapImporter
 /processor:TiledMapProcessor
-/build:../../../sourceAssets/data/maps/hospital.tmx
+/build:data/maps/hospital.tmx
 
-#begin ../../../sourceAssets/data/maps/hospital2.tmx
+#begin data/maps/hospital2.tmx
 /importer:TiledMapImporter
 /processor:TiledMapProcessor
-/build:../../../sourceAssets/data/maps/hospital2.tmx
+/build:data/maps/hospital2.tmx
 
-#begin ../../../sourceAssets/data/maps/house.tmx
+#begin data/maps/house.tmx
 /importer:TiledMapImporter
 /processor:TiledMapProcessor
-/build:../../../sourceAssets/data/maps/house.tmx
+/build:data/maps/house.tmx
 
-#begin ../../../sourceAssets/data/maps/plant.tmx
+#begin data/maps/plant.tmx
 /importer:TiledMapImporter
 /processor:TiledMapProcessor
-/build:../../../sourceAssets/data/maps/plant.tmx
+/build:data/maps/plant.tmx
 
-#begin ../../../sourceAssets/data/maps/water.tmx
+#begin data/maps/water.tmx
 /importer:TiledMapImporter
 /processor:TiledMapProcessor
-/build:../../../sourceAssets/data/maps/water.tmx
+/build:data/maps/water.tmx
 
-#begin ../../../sourceAssets/data/maps/world.tmx
+#begin data/maps/world.tmx
 /importer:TiledMapImporter
 /processor:TiledMapProcessor
-/build:../../../sourceAssets/data/maps/world.tmx
+/build:data/maps/world.tmx
 
-#begin ../../../sourceAssets/data/tilesets/Grass.tsx
+#begin data/tilesets/Grass.tsx
 /importer:TiledMapTilesetImporter
 /processor:TiledMapTilesetProcessor
-/build:../../../sourceAssets/data/tilesets/Grass.tsx
+/build:data/tilesets/Grass.tsx
 
-#begin ../../../sourceAssets/data/tilesets/indoor.tsx
+#begin data/tilesets/indoor.tsx
 /importer:TiledMapTilesetImporter
 /processor:TiledMapTilesetProcessor
-/build:../../../sourceAssets/data/tilesets/indoor.tsx
+/build:data/tilesets/indoor.tsx
 
-#begin ../../../sourceAssets/data/tilesets/objects.tsx
+#begin data/tilesets/objects.tsx
 /importer:TiledMapTilesetImporter
 /processor:TiledMapTilesetProcessor
-/build:../../../sourceAssets/data/tilesets/objects.tsx
+/build:data/tilesets/objects.tsx
 
-#begin ../../../sourceAssets/data/tilesets/world.tsx
+#begin data/tilesets/world.tsx
 /importer:TiledMapTilesetImporter
 /processor:TiledMapTilesetProcessor
-/build:../../../sourceAssets/data/tilesets/world.tsx
+/build:data/tilesets/world.tsx
 
-#begin ../../../sourceAssets/graphics/attacks/explosion.png
+#begin graphics/attacks/explosion.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -144,9 +144,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/attacks/explosion.png
+/build:graphics/attacks/explosion.png
 
-#begin ../../../sourceAssets/graphics/attacks/fire.png
+#begin graphics/attacks/fire.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -156,9 +156,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/attacks/fire.png
+/build:graphics/attacks/fire.png
 
-#begin ../../../sourceAssets/graphics/attacks/green.png
+#begin graphics/attacks/green.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -168,9 +168,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/attacks/green.png
+/build:graphics/attacks/green.png
 
-#begin ../../../sourceAssets/graphics/attacks/ice.png
+#begin graphics/attacks/ice.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -180,9 +180,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/attacks/ice.png
+/build:graphics/attacks/ice.png
 
-#begin ../../../sourceAssets/graphics/attacks/scratch.png
+#begin graphics/attacks/scratch.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -192,9 +192,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/attacks/scratch.png
+/build:graphics/attacks/scratch.png
 
-#begin ../../../sourceAssets/graphics/attacks/splash.png
+#begin graphics/attacks/splash.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -204,9 +204,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/attacks/splash.png
+/build:graphics/attacks/splash.png
 
-#begin ../../../sourceAssets/graphics/backgrounds/forest.png
+#begin graphics/backgrounds/forest.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -216,9 +216,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/backgrounds/forest.png
+/build:graphics/backgrounds/forest.png
 
-#begin ../../../sourceAssets/graphics/backgrounds/ice.png
+#begin graphics/backgrounds/ice.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -228,9 +228,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/backgrounds/ice.png
+/build:graphics/backgrounds/ice.png
 
-#begin ../../../sourceAssets/graphics/backgrounds/sand.png
+#begin graphics/backgrounds/sand.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -240,9 +240,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/backgrounds/sand.png
+/build:graphics/backgrounds/sand.png
 
-#begin ../../../sourceAssets/graphics/characters/blond.png
+#begin graphics/characters/blond.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -252,9 +252,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/characters/blond.png
+/build:graphics/characters/blond.png
 
-#begin ../../../sourceAssets/graphics/characters/fire_boss.png
+#begin graphics/characters/fire_boss.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -264,9 +264,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/characters/fire_boss.png
+/build:graphics/characters/fire_boss.png
 
-#begin ../../../sourceAssets/graphics/characters/grass_boss.png
+#begin graphics/characters/grass_boss.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -276,9 +276,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/characters/grass_boss.png
+/build:graphics/characters/grass_boss.png
 
-#begin ../../../sourceAssets/graphics/characters/hat_girl.png
+#begin graphics/characters/hat_girl.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -288,9 +288,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/characters/hat_girl.png
+/build:graphics/characters/hat_girl.png
 
-#begin ../../../sourceAssets/graphics/characters/player.png
+#begin graphics/characters/player.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -300,9 +300,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/characters/player.png
+/build:graphics/characters/player.png
 
-#begin ../../../sourceAssets/graphics/characters/purple_girl.png
+#begin graphics/characters/purple_girl.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -312,9 +312,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/characters/purple_girl.png
+/build:graphics/characters/purple_girl.png
 
-#begin ../../../sourceAssets/graphics/characters/straw.png
+#begin graphics/characters/straw.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -324,9 +324,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/characters/straw.png
+/build:graphics/characters/straw.png
 
-#begin ../../../sourceAssets/graphics/characters/water_boss.png
+#begin graphics/characters/water_boss.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -336,9 +336,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/characters/water_boss.png
+/build:graphics/characters/water_boss.png
 
-#begin ../../../sourceAssets/graphics/characters/young_girl.png
+#begin graphics/characters/young_girl.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -348,9 +348,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/characters/young_girl.png
+/build:graphics/characters/young_girl.png
 
-#begin ../../../sourceAssets/graphics/characters/young_guy.png
+#begin graphics/characters/young_guy.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -360,24 +360,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/characters/young_guy.png
+/build:graphics/characters/young_guy.png
 
-#begin ../../../sourceAssets/graphics/fonts/dogicapixel.otf
-/importer:
-/processor:
-/build:../../../sourceAssets/graphics/fonts/dogicapixel.otf
-
-#begin ../../../sourceAssets/graphics/fonts/dogicapixelbold.otf
-/importer:
-/processor:
-/build:../../../sourceAssets/graphics/fonts/dogicapixelbold.otf
-
-#begin ../../../sourceAssets/graphics/fonts/PixeloidSans.ttf
-/importer:
-/processor:
-/build:../../../sourceAssets/graphics/fonts/PixeloidSans.ttf
-
-#begin ../../../sourceAssets/graphics/icons/Atrox.png
+#begin graphics/icons/Atrox.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -387,9 +372,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/icons/Atrox.png
+/build:graphics/icons/Atrox.png
 
-#begin ../../../sourceAssets/graphics/icons/Charmadillo.png
+#begin graphics/icons/Charmadillo.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -399,9 +384,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/icons/Charmadillo.png
+/build:graphics/icons/Charmadillo.png
 
-#begin ../../../sourceAssets/graphics/icons/Cindrill.png
+#begin graphics/icons/Cindrill.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -411,9 +396,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/icons/Cindrill.png
+/build:graphics/icons/Cindrill.png
 
-#begin ../../../sourceAssets/graphics/icons/Cleaf.png
+#begin graphics/icons/Cleaf.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -423,9 +408,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/icons/Cleaf.png
+/build:graphics/icons/Cleaf.png
 
-#begin ../../../sourceAssets/graphics/icons/Draem.png
+#begin graphics/icons/Draem.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -435,9 +420,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/icons/Draem.png
+/build:graphics/icons/Draem.png
 
-#begin ../../../sourceAssets/graphics/icons/Finiette.png
+#begin graphics/icons/Finiette.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -447,9 +432,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/icons/Finiette.png
+/build:graphics/icons/Finiette.png
 
-#begin ../../../sourceAssets/graphics/icons/Finsta.png
+#begin graphics/icons/Finsta.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -459,9 +444,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/icons/Finsta.png
+/build:graphics/icons/Finsta.png
 
-#begin ../../../sourceAssets/graphics/icons/Friolera.png
+#begin graphics/icons/Friolera.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -471,9 +456,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/icons/Friolera.png
+/build:graphics/icons/Friolera.png
 
-#begin ../../../sourceAssets/graphics/icons/Gulfin.png
+#begin graphics/icons/Gulfin.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -483,9 +468,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/icons/Gulfin.png
+/build:graphics/icons/Gulfin.png
 
-#begin ../../../sourceAssets/graphics/icons/Ivieron.png
+#begin graphics/icons/Ivieron.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -495,9 +480,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/icons/Ivieron.png
+/build:graphics/icons/Ivieron.png
 
-#begin ../../../sourceAssets/graphics/icons/Jacana.png
+#begin graphics/icons/Jacana.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -507,9 +492,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/icons/Jacana.png
+/build:graphics/icons/Jacana.png
 
-#begin ../../../sourceAssets/graphics/icons/Larvea.png
+#begin graphics/icons/Larvea.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -519,9 +504,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/icons/Larvea.png
+/build:graphics/icons/Larvea.png
 
-#begin ../../../sourceAssets/graphics/icons/Pluma.png
+#begin graphics/icons/Pluma.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -531,9 +516,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/icons/Pluma.png
+/build:graphics/icons/Pluma.png
 
-#begin ../../../sourceAssets/graphics/icons/Plumette.png
+#begin graphics/icons/Plumette.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -543,9 +528,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/icons/Plumette.png
+/build:graphics/icons/Plumette.png
 
-#begin ../../../sourceAssets/graphics/icons/Pouch.png
+#begin graphics/icons/Pouch.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -555,9 +540,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/icons/Pouch.png
+/build:graphics/icons/Pouch.png
 
-#begin ../../../sourceAssets/graphics/icons/Sparchu.png
+#begin graphics/icons/Sparchu.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -567,9 +552,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/icons/Sparchu.png
+/build:graphics/icons/Sparchu.png
 
-#begin ../../../sourceAssets/graphics/monsters/Atrox.png
+#begin graphics/monsters/Atrox.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -579,9 +564,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/monsters/Atrox.png
+/build:graphics/monsters/Atrox.png
 
-#begin ../../../sourceAssets/graphics/monsters/Charmadillo.png
+#begin graphics/monsters/Charmadillo.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -591,9 +576,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/monsters/Charmadillo.png
+/build:graphics/monsters/Charmadillo.png
 
-#begin ../../../sourceAssets/graphics/monsters/Cindrill.png
+#begin graphics/monsters/Cindrill.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -603,9 +588,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/monsters/Cindrill.png
+/build:graphics/monsters/Cindrill.png
 
-#begin ../../../sourceAssets/graphics/monsters/Cleaf.png
+#begin graphics/monsters/Cleaf.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -615,9 +600,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/monsters/Cleaf.png
+/build:graphics/monsters/Cleaf.png
 
-#begin ../../../sourceAssets/graphics/monsters/Draem.png
+#begin graphics/monsters/Draem.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -627,9 +612,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/monsters/Draem.png
+/build:graphics/monsters/Draem.png
 
-#begin ../../../sourceAssets/graphics/monsters/Finiette.png
+#begin graphics/monsters/Finiette.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -639,9 +624,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/monsters/Finiette.png
+/build:graphics/monsters/Finiette.png
 
-#begin ../../../sourceAssets/graphics/monsters/Finsta.png
+#begin graphics/monsters/Finsta.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -651,9 +636,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/monsters/Finsta.png
+/build:graphics/monsters/Finsta.png
 
-#begin ../../../sourceAssets/graphics/monsters/Friolera.png
+#begin graphics/monsters/Friolera.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -663,9 +648,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/monsters/Friolera.png
+/build:graphics/monsters/Friolera.png
 
-#begin ../../../sourceAssets/graphics/monsters/Gulfin.png
+#begin graphics/monsters/Gulfin.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -675,9 +660,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/monsters/Gulfin.png
+/build:graphics/monsters/Gulfin.png
 
-#begin ../../../sourceAssets/graphics/monsters/Ivieron.png
+#begin graphics/monsters/Ivieron.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -687,9 +672,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/monsters/Ivieron.png
+/build:graphics/monsters/Ivieron.png
 
-#begin ../../../sourceAssets/graphics/monsters/Jacana.png
+#begin graphics/monsters/Jacana.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -699,9 +684,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/monsters/Jacana.png
+/build:graphics/monsters/Jacana.png
 
-#begin ../../../sourceAssets/graphics/monsters/Larvea.png
+#begin graphics/monsters/Larvea.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -711,9 +696,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/monsters/Larvea.png
+/build:graphics/monsters/Larvea.png
 
-#begin ../../../sourceAssets/graphics/monsters/Pluma.png
+#begin graphics/monsters/Pluma.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -723,9 +708,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/monsters/Pluma.png
+/build:graphics/monsters/Pluma.png
 
-#begin ../../../sourceAssets/graphics/monsters/Plumette.png
+#begin graphics/monsters/Plumette.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -735,9 +720,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/monsters/Plumette.png
+/build:graphics/monsters/Plumette.png
 
-#begin ../../../sourceAssets/graphics/monsters/Pouch.png
+#begin graphics/monsters/Pouch.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -747,9 +732,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/monsters/Pouch.png
+/build:graphics/monsters/Pouch.png
 
-#begin ../../../sourceAssets/graphics/monsters/Sparchu.png
+#begin graphics/monsters/Sparchu.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -759,9 +744,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/monsters/Sparchu.png
+/build:graphics/monsters/Sparchu.png
 
-#begin ../../../sourceAssets/graphics/objects/arean_fire.png
+#begin graphics/objects/arean_fire.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -771,9 +756,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/objects/arean_fire.png
+/build:graphics/objects/arean_fire.png
 
-#begin ../../../sourceAssets/graphics/objects/arena_plant.png
+#begin graphics/objects/arena_plant.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -783,9 +768,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/objects/arena_plant.png
+/build:graphics/objects/arena_plant.png
 
-#begin ../../../sourceAssets/graphics/objects/arena_water.png
+#begin graphics/objects/arena_water.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -795,9 +780,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/objects/arena_water.png
+/build:graphics/objects/arena_water.png
 
-#begin ../../../sourceAssets/graphics/objects/gate_pillar.png
+#begin graphics/objects/gate_pillar.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -807,9 +792,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/objects/gate_pillar.png
+/build:graphics/objects/gate_pillar.png
 
-#begin ../../../sourceAssets/graphics/objects/gate_top.png
+#begin graphics/objects/gate_top.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -819,9 +804,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/objects/gate_top.png
+/build:graphics/objects/gate_top.png
 
-#begin ../../../sourceAssets/graphics/objects/grass_ice.png
+#begin graphics/objects/grass_ice.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -831,9 +816,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/objects/grass_ice.png
+/build:graphics/objects/grass_ice.png
 
-#begin ../../../sourceAssets/graphics/objects/grass.png
+#begin graphics/objects/grass.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -843,9 +828,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/objects/grass.png
+/build:graphics/objects/grass.png
 
-#begin ../../../sourceAssets/graphics/objects/grassrock1.png
+#begin graphics/objects/grassrock1.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -855,9 +840,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/objects/grassrock1.png
+/build:graphics/objects/grassrock1.png
 
-#begin ../../../sourceAssets/graphics/objects/grassrock2.png
+#begin graphics/objects/grassrock2.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -867,9 +852,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/objects/grassrock2.png
+/build:graphics/objects/grassrock2.png
 
-#begin ../../../sourceAssets/graphics/objects/green_tree_bushy.png
+#begin graphics/objects/green_tree_bushy.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -879,9 +864,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/objects/green_tree_bushy.png
+/build:graphics/objects/green_tree_bushy.png
 
-#begin ../../../sourceAssets/graphics/objects/green_tree_small.png
+#begin graphics/objects/green_tree_small.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -891,9 +876,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/objects/green_tree_small.png
+/build:graphics/objects/green_tree_small.png
 
-#begin ../../../sourceAssets/graphics/objects/green_tree.png
+#begin graphics/objects/green_tree.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -903,9 +888,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/objects/green_tree.png
+/build:graphics/objects/green_tree.png
 
-#begin ../../../sourceAssets/graphics/objects/hospital.png
+#begin graphics/objects/hospital.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -915,9 +900,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/objects/hospital.png
+/build:graphics/objects/hospital.png
 
-#begin ../../../sourceAssets/graphics/objects/house_large_alt.png
+#begin graphics/objects/house_large_alt.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -927,9 +912,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/objects/house_large_alt.png
+/build:graphics/objects/house_large_alt.png
 
-#begin ../../../sourceAssets/graphics/objects/house_large.png
+#begin graphics/objects/house_large.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -939,9 +924,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/objects/house_large.png
+/build:graphics/objects/house_large.png
 
-#begin ../../../sourceAssets/graphics/objects/house_small_alt.png
+#begin graphics/objects/house_small_alt.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -951,9 +936,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/objects/house_small_alt.png
+/build:graphics/objects/house_small_alt.png
 
-#begin ../../../sourceAssets/graphics/objects/house_small.png
+#begin graphics/objects/house_small.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -963,9 +948,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/objects/house_small.png
+/build:graphics/objects/house_small.png
 
-#begin ../../../sourceAssets/graphics/objects/ice_tree.png
+#begin graphics/objects/ice_tree.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -975,9 +960,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/objects/ice_tree.png
+/build:graphics/objects/ice_tree.png
 
-#begin ../../../sourceAssets/graphics/objects/icerock1.png
+#begin graphics/objects/icerock1.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -987,9 +972,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/objects/icerock1.png
+/build:graphics/objects/icerock1.png
 
-#begin ../../../sourceAssets/graphics/objects/icerock2.png
+#begin graphics/objects/icerock2.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -999,9 +984,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/objects/icerock2.png
+/build:graphics/objects/icerock2.png
 
-#begin ../../../sourceAssets/graphics/objects/palm_alt.png
+#begin graphics/objects/palm_alt.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -1011,9 +996,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/objects/palm_alt.png
+/build:graphics/objects/palm_alt.png
 
-#begin ../../../sourceAssets/graphics/objects/palm_small.png
+#begin graphics/objects/palm_small.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -1023,9 +1008,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/objects/palm_small.png
+/build:graphics/objects/palm_small.png
 
-#begin ../../../sourceAssets/graphics/objects/palm.png
+#begin graphics/objects/palm.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -1035,9 +1020,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/objects/palm.png
+/build:graphics/objects/palm.png
 
-#begin ../../../sourceAssets/graphics/objects/ruin_gate.png
+#begin graphics/objects/ruin_gate.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -1047,9 +1032,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/objects/ruin_gate.png
+/build:graphics/objects/ruin_gate.png
 
-#begin ../../../sourceAssets/graphics/objects/ruin_pillar_broke_alt.png
+#begin graphics/objects/ruin_pillar_broke_alt.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -1059,9 +1044,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/objects/ruin_pillar_broke_alt.png
+/build:graphics/objects/ruin_pillar_broke_alt.png
 
-#begin ../../../sourceAssets/graphics/objects/ruin_pillar_broke.png
+#begin graphics/objects/ruin_pillar_broke.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -1071,9 +1056,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/objects/ruin_pillar_broke.png
+/build:graphics/objects/ruin_pillar_broke.png
 
-#begin ../../../sourceAssets/graphics/objects/ruin_pillar.png
+#begin graphics/objects/ruin_pillar.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -1083,9 +1068,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/objects/ruin_pillar.png
+/build:graphics/objects/ruin_pillar.png
 
-#begin ../../../sourceAssets/graphics/objects/sand.png
+#begin graphics/objects/sand.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -1095,9 +1080,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/objects/sand.png
+/build:graphics/objects/sand.png
 
-#begin ../../../sourceAssets/graphics/objects/sandrock1.png
+#begin graphics/objects/sandrock1.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -1107,9 +1092,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/objects/sandrock1.png
+/build:graphics/objects/sandrock1.png
 
-#begin ../../../sourceAssets/graphics/objects/sandrock2.png
+#begin graphics/objects/sandrock2.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -1119,9 +1104,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/objects/sandrock2.png
+/build:graphics/objects/sandrock2.png
 
-#begin ../../../sourceAssets/graphics/objects/teal_tree_bushy.png
+#begin graphics/objects/teal_tree_bushy.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -1131,9 +1116,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/objects/teal_tree_bushy.png
+/build:graphics/objects/teal_tree_bushy.png
 
-#begin ../../../sourceAssets/graphics/objects/teal_tree_small.png
+#begin graphics/objects/teal_tree_small.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -1143,9 +1128,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/objects/teal_tree_small.png
+/build:graphics/objects/teal_tree_small.png
 
-#begin ../../../sourceAssets/graphics/objects/teal_tree.png
+#begin graphics/objects/teal_tree.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -1155,9 +1140,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/objects/teal_tree.png
+/build:graphics/objects/teal_tree.png
 
-#begin ../../../sourceAssets/graphics/other/shadow.png
+#begin graphics/other/shadow.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -1167,9 +1152,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/other/shadow.png
+/build:graphics/other/shadow.png
 
-#begin ../../../sourceAssets/graphics/other/star animation/00002.png
+#begin graphics/other/star animation/00002.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -1179,9 +1164,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/other/star animation/00002.png
+/build:graphics/other/star animation/00002.png
 
-#begin ../../../sourceAssets/graphics/other/star animation/00003.png
+#begin graphics/other/star animation/00003.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -1191,9 +1176,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/other/star animation/00003.png
+/build:graphics/other/star animation/00003.png
 
-#begin ../../../sourceAssets/graphics/other/star animation/00004.png
+#begin graphics/other/star animation/00004.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -1203,9 +1188,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/other/star animation/00004.png
+/build:graphics/other/star animation/00004.png
 
-#begin ../../../sourceAssets/graphics/other/star animation/00005.png
+#begin graphics/other/star animation/00005.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -1215,9 +1200,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/other/star animation/00005.png
+/build:graphics/other/star animation/00005.png
 
-#begin ../../../sourceAssets/graphics/other/star animation/00006.png
+#begin graphics/other/star animation/00006.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -1227,9 +1212,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/other/star animation/00006.png
+/build:graphics/other/star animation/00006.png
 
-#begin ../../../sourceAssets/graphics/other/star animation/00007.png
+#begin graphics/other/star animation/00007.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -1239,9 +1224,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/other/star animation/00007.png
+/build:graphics/other/star animation/00007.png
 
-#begin ../../../sourceAssets/graphics/other/star animation/00008.png
+#begin graphics/other/star animation/00008.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -1251,9 +1236,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/other/star animation/00008.png
+/build:graphics/other/star animation/00008.png
 
-#begin ../../../sourceAssets/graphics/other/star animation/00009.png
+#begin graphics/other/star animation/00009.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -1263,9 +1248,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/other/star animation/00009.png
+/build:graphics/other/star animation/00009.png
 
-#begin ../../../sourceAssets/graphics/other/star animation/00010.png
+#begin graphics/other/star animation/00010.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -1275,9 +1260,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/other/star animation/00010.png
+/build:graphics/other/star animation/00010.png
 
-#begin ../../../sourceAssets/graphics/other/star animation/00011.png
+#begin graphics/other/star animation/00011.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -1287,9 +1272,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/other/star animation/00011.png
+/build:graphics/other/star animation/00011.png
 
-#begin ../../../sourceAssets/graphics/other/star animation/00012.png
+#begin graphics/other/star animation/00012.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -1299,9 +1284,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/other/star animation/00012.png
+/build:graphics/other/star animation/00012.png
 
-#begin ../../../sourceAssets/graphics/other/star animation/00013.png
+#begin graphics/other/star animation/00013.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -1311,9 +1296,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/other/star animation/00013.png
+/build:graphics/other/star animation/00013.png
 
-#begin ../../../sourceAssets/graphics/other/star animation/00014.png
+#begin graphics/other/star animation/00014.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -1323,9 +1308,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/other/star animation/00014.png
+/build:graphics/other/star animation/00014.png
 
-#begin ../../../sourceAssets/graphics/other/star animation/00015.png
+#begin graphics/other/star animation/00015.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -1335,9 +1320,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/other/star animation/00015.png
+/build:graphics/other/star animation/00015.png
 
-#begin ../../../sourceAssets/graphics/other/star animation/00016.png
+#begin graphics/other/star animation/00016.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -1347,9 +1332,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/other/star animation/00016.png
+/build:graphics/other/star animation/00016.png
 
-#begin ../../../sourceAssets/graphics/other/star animation/00017.png
+#begin graphics/other/star animation/00017.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -1359,9 +1344,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/other/star animation/00017.png
+/build:graphics/other/star animation/00017.png
 
-#begin ../../../sourceAssets/graphics/other/star animation/00018.png
+#begin graphics/other/star animation/00018.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -1371,9 +1356,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/other/star animation/00018.png
+/build:graphics/other/star animation/00018.png
 
-#begin ../../../sourceAssets/graphics/other/star animation/00019.png
+#begin graphics/other/star animation/00019.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -1383,9 +1368,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/other/star animation/00019.png
+/build:graphics/other/star animation/00019.png
 
-#begin ../../../sourceAssets/graphics/other/star animation/00020.png
+#begin graphics/other/star animation/00020.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -1395,9 +1380,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/other/star animation/00020.png
+/build:graphics/other/star animation/00020.png
 
-#begin ../../../sourceAssets/graphics/other/star animation/00021.png
+#begin graphics/other/star animation/00021.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -1407,9 +1392,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/other/star animation/00021.png
+/build:graphics/other/star animation/00021.png
 
-#begin ../../../sourceAssets/graphics/other/star animation/00022.png
+#begin graphics/other/star animation/00022.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -1419,9 +1404,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/other/star animation/00022.png
+/build:graphics/other/star animation/00022.png
 
-#begin ../../../sourceAssets/graphics/other/star animation/00023.png
+#begin graphics/other/star animation/00023.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -1431,9 +1416,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/other/star animation/00023.png
+/build:graphics/other/star animation/00023.png
 
-#begin ../../../sourceAssets/graphics/other/star animation/00024.png
+#begin graphics/other/star animation/00024.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -1443,9 +1428,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/other/star animation/00024.png
+/build:graphics/other/star animation/00024.png
 
-#begin ../../../sourceAssets/graphics/other/star animation/00025.png
+#begin graphics/other/star animation/00025.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -1455,9 +1440,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/other/star animation/00025.png
+/build:graphics/other/star animation/00025.png
 
-#begin ../../../sourceAssets/graphics/other/star animation/00026.png
+#begin graphics/other/star animation/00026.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -1467,9 +1452,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/other/star animation/00026.png
+/build:graphics/other/star animation/00026.png
 
-#begin ../../../sourceAssets/graphics/other/star animation/00027.png
+#begin graphics/other/star animation/00027.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -1479,9 +1464,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/other/star animation/00027.png
+/build:graphics/other/star animation/00027.png
 
-#begin ../../../sourceAssets/graphics/other/star animation/00028.png
+#begin graphics/other/star animation/00028.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -1491,9 +1476,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/other/star animation/00028.png
+/build:graphics/other/star animation/00028.png
 
-#begin ../../../sourceAssets/graphics/other/star animation/00029.png
+#begin graphics/other/star animation/00029.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -1503,9 +1488,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/other/star animation/00029.png
+/build:graphics/other/star animation/00029.png
 
-#begin ../../../sourceAssets/graphics/tilesets/coast.png
+#begin graphics/tilesets/coast.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -1515,9 +1500,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/tilesets/coast.png
+/build:graphics/tilesets/coast.png
 
-#begin ../../../sourceAssets/graphics/tilesets/indoor.png
+#begin graphics/tilesets/indoor.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -1527,9 +1512,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/tilesets/indoor.png
+/build:graphics/tilesets/indoor.png
 
-#begin ../../../sourceAssets/graphics/tilesets/water/0.png
+#begin graphics/tilesets/water/0.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -1539,9 +1524,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/tilesets/water/0.png
+/build:graphics/tilesets/water/0.png
 
-#begin ../../../sourceAssets/graphics/tilesets/water/1.png
+#begin graphics/tilesets/water/1.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -1551,9 +1536,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/tilesets/water/1.png
+/build:graphics/tilesets/water/1.png
 
-#begin ../../../sourceAssets/graphics/tilesets/water/2.png
+#begin graphics/tilesets/water/2.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -1563,9 +1548,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/tilesets/water/2.png
+/build:graphics/tilesets/water/2.png
 
-#begin ../../../sourceAssets/graphics/tilesets/water/3.png
+#begin graphics/tilesets/water/3.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -1575,9 +1560,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/tilesets/water/3.png
+/build:graphics/tilesets/water/3.png
 
-#begin ../../../sourceAssets/graphics/tilesets/world.png
+#begin graphics/tilesets/world.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -1587,9 +1572,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/tilesets/world.png
+/build:graphics/tilesets/world.png
 
-#begin ../../../sourceAssets/graphics/ui/arrows_highlight.png
+#begin graphics/ui/arrows_highlight.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -1599,9 +1584,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/ui/arrows_highlight.png
+/build:graphics/ui/arrows_highlight.png
 
-#begin ../../../sourceAssets/graphics/ui/arrows.png
+#begin graphics/ui/arrows.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -1611,9 +1596,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/ui/arrows.png
+/build:graphics/ui/arrows.png
 
-#begin ../../../sourceAssets/graphics/ui/attack.png
+#begin graphics/ui/attack.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -1623,9 +1608,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/ui/attack.png
+/build:graphics/ui/attack.png
 
-#begin ../../../sourceAssets/graphics/ui/cross.png
+#begin graphics/ui/cross.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -1635,9 +1620,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/ui/cross.png
+/build:graphics/ui/cross.png
 
-#begin ../../../sourceAssets/graphics/ui/defense.png
+#begin graphics/ui/defense.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -1647,9 +1632,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/ui/defense.png
+/build:graphics/ui/defense.png
 
-#begin ../../../sourceAssets/graphics/ui/energy.png
+#begin graphics/ui/energy.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -1659,9 +1644,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/ui/energy.png
+/build:graphics/ui/energy.png
 
-#begin ../../../sourceAssets/graphics/ui/hand_highlight.png
+#begin graphics/ui/hand_highlight.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -1671,9 +1656,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/ui/hand_highlight.png
+/build:graphics/ui/hand_highlight.png
 
-#begin ../../../sourceAssets/graphics/ui/hand.png
+#begin graphics/ui/hand.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -1683,9 +1668,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/ui/hand.png
+/build:graphics/ui/hand.png
 
-#begin ../../../sourceAssets/graphics/ui/health.png
+#begin graphics/ui/health.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -1695,9 +1680,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/ui/health.png
+/build:graphics/ui/health.png
 
-#begin ../../../sourceAssets/graphics/ui/notice.png
+#begin graphics/ui/notice.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -1707,9 +1692,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/ui/notice.png
+/build:graphics/ui/notice.png
 
-#begin ../../../sourceAssets/graphics/ui/recovery.png
+#begin graphics/ui/recovery.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -1719,9 +1704,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/ui/recovery.png
+/build:graphics/ui/recovery.png
 
-#begin ../../../sourceAssets/graphics/ui/shield_highlight.png
+#begin graphics/ui/shield_highlight.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -1731,9 +1716,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/ui/shield_highlight.png
+/build:graphics/ui/shield_highlight.png
 
-#begin ../../../sourceAssets/graphics/ui/shield.png
+#begin graphics/ui/shield.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -1743,9 +1728,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/ui/shield.png
+/build:graphics/ui/shield.png
 
-#begin ../../../sourceAssets/graphics/ui/speed.png
+#begin graphics/ui/speed.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -1755,9 +1740,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/ui/speed.png
+/build:graphics/ui/speed.png
 
-#begin ../../../sourceAssets/graphics/ui/star.png
+#begin graphics/ui/star.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -1767,9 +1752,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/ui/star.png
+/build:graphics/ui/star.png
 
-#begin ../../../sourceAssets/graphics/ui/sword_highlight.png
+#begin graphics/ui/sword_highlight.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -1779,9 +1764,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/ui/sword_highlight.png
+/build:graphics/ui/sword_highlight.png
 
-#begin ../../../sourceAssets/graphics/ui/sword.png
+#begin graphics/ui/sword.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -1791,5 +1776,12 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../sourceAssets/graphics/ui/sword.png
+/build:graphics/ui/sword.png
+
+#begin Roboto.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/build:Roboto.spritefont
 

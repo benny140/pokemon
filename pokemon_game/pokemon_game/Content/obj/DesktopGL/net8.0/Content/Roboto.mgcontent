@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <SourceFile>C:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/Roboto.spritefont</SourceFile>
+  <SourceTime>2025-12-18T15:49:01.7812326+11:00</SourceTime>
+  <DestFile>C:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/bin/DesktopGL/Content/Roboto.xnb</DestFile>
+  <DestTime>2025-12-18T17:12:36.9291969+11:00</DestTime>
+  <Importer>FontDescriptionImporter</Importer>
+  <ImporterTime>2025-10-21T01:25:32+11:00</ImporterTime>
+  <Processor>FontDescriptionProcessor</Processor>
+  <ProcessorTime>2025-10-21T01:25:32+11:00</ProcessorTime>
+  <Parameters>
+    <Key>PremultiplyAlpha</Key>
+    <Value>True</Value>
+  </Parameters>
+  <Parameters>
+    <Key>TextureFormat</Key>
+    <Value>Compressed</Value>
+  </Parameters>
+  <Dependencies />
+  <BuildAsset />
+  <BuildOutput />
+</PipelineBuildEvent>
