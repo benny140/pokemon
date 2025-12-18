@@ -1,2 +1,4 @@
-﻿using var game = new pokemon_game.Game1();
+﻿using pokemon_game.Core;
+
+using var game = new Game1();
 game.Run();
