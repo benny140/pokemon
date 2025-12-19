@@ -19,6 +19,7 @@ public class Game1 : Game
     private ObjectManager _objectManager;
     private Player _player;
     private WaterAnimationManager _waterAnimationManager;
+    private CoastAnimationManager _coastAnimationManager;
 
     public Game1()
     {
@@ -68,6 +69,11 @@ public class Game1 : Game
             Content.Load<Texture2D>("graphics/tilesets/water/2"),
             Content.Load<Texture2D>("graphics/tilesets/water/3")
         );
+
+        // Load coast animation
+        _coastAnimationManager = new CoastAnimationManager();
+        _coastAnimationManager.LoadContent(_tiledMap);
+        _coastAnimationManager.LoadTexture(Content.Load<Texture2D>("graphics/tilesets/coast"));
     }
 
     protected override void Update(GameTime gameTime)
@@ -81,6 +87,7 @@ public class Game1 : Game
         _player.Update(gameTime);
         _camera.Follow(_player.Position);
         _waterAnimationManager.Update(gameTime);
+        _coastAnimationManager.Update(gameTime);
 
         base.Update(gameTime);
     }
@@ -98,6 +105,7 @@ public class Game1 : Game
             samplerState: SamplerState.PointClamp
         );
         _waterAnimationManager.Draw(_spriteBatch);
+        _coastAnimationManager.Draw(_spriteBatch);
         _objectManager.Draw(_spriteBatch);
         _player.Draw(_spriteBatch);
         _spriteBatch.End();
