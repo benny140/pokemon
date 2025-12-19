@@ -4,6 +4,7 @@ using Microsoft.Xna.Framework.Input;
 using MonoGame.Extended.Tiled;
 using MonoGame.Extended.Tiled.Renderers;
 using pokemon_game.Entities;
+using pokemon_game.Graphics;
 using pokemon_game.Managers;
 
 namespace pokemon_game.Core;
@@ -14,9 +15,10 @@ public class Game1 : Game
     private SpriteBatch _spriteBatch;
     private TiledMap _tiledMap;
     private TiledMapRenderer _tiledMapRenderer;
-    private Matrix _viewMatrix;
+    private Camera _camera;
     private ObjectManager _objectManager;
     private Player _player;
+    private WaterAnimationManager _waterAnimationManager;
 
     public Game1()
     {
@@ -29,8 +31,14 @@ public class Game1 : Game
 
     protected override void Initialize()
     {
-        // Create a view matrix that scales down to show 4x the area
-        _viewMatrix = Matrix.CreateScale(Settings.ZOOM_SCALE);
+        // Create camera with dead zone in the middle
+        _camera = new Camera(
+            Settings.WINDOW_WIDTH,
+            Settings.WINDOW_HEIGHT,
+            Settings.ZOOM_SCALE,
+            deadZoneWidth: 400f, // Horizontal dead zone
+            deadZoneHeight: 300f // Vertical dead zone
+        );
 
         base.Initialize();
     }
@@ -50,6 +58,16 @@ public class Game1 : Game
         // Load player
         var playerTexture = Content.Load<Texture2D>("graphics/characters/player");
         _player = new Player(playerTexture, new Vector2(2560, 2560)); // Start in middle of map
+
+        // Load water animation
+        _waterAnimationManager = new WaterAnimationManager();
+        _waterAnimationManager.LoadContent(GraphicsDevice, _tiledMap);
+        _waterAnimationManager.LoadTextures(
+            Content.Load<Texture2D>("graphics/tilesets/water/0"),
+            Content.Load<Texture2D>("graphics/tilesets/water/1"),
+            Content.Load<Texture2D>("graphics/tilesets/water/2"),
+            Content.Load<Texture2D>("graphics/tilesets/water/3")
+        );
     }
 
     protected override void Update(GameTime gameTime)
@@ -61,6 +79,8 @@ public class Game1 : Game
             Exit();
 
         _player.Update(gameTime);
+        _camera.Follow(_player.Position);
+        _waterAnimationManager.Update(gameTime);
 
         base.Update(gameTime);
     }
@@ -68,12 +88,16 @@ public class Game1 : Game
     protected override void Draw(GameTime gameTime)
     {
         GraphicsDevice.Clear(Settings.Colors.Gray);
+        _tiledMapRenderer.Draw(_camera.Transform);
 
-        // Draw the Tiled map with the scaled view matrix
-        _tiledMapRenderer.Draw(_viewMatrix);
-
-        // Draw object sprites and player
-        _spriteBatch.Begin(transformMatrix: _viewMatrix, samplerState: SamplerState.PointClamp);
+        // Draw water animation, object sprites and player with camera transform
+        // Use SpriteSortMode.FrontToBack to sort by layer depth (Y position)
+        _spriteBatch.Begin(
+            sortMode: SpriteSortMode.FrontToBack,
+            transformMatrix: _camera.Transform,
+            samplerState: SamplerState.PointClamp
+        );
+        _waterAnimationManager.Draw(_spriteBatch);
         _objectManager.Draw(_spriteBatch);
         _player.Draw(_spriteBatch);
         _spriteBatch.End();
