@@ -2,6 +2,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using pokemon_game.Core;
+using pokemon_game.Managers;
 
 namespace pokemon_game.Entities;
 
@@ -16,19 +17,39 @@ public class Player
     private bool _isMoving;
     private int _frameWidth;
     private int _frameHeight;
+    private CollisionManager _collisionManager;
 
     public Vector2 Position => _position;
 
-    public Player(Texture2D texture, Vector2 startPosition)
+    public Player(
+        Texture2D texture,
+        Vector2 startPosition,
+        CollisionManager collisionManager = null
+    )
     {
         _texture = texture;
         _position = startPosition;
         _currentFrame = 0;
         _direction = 0; // Start facing down
+        _collisionManager = collisionManager;
 
         // Calculate frame size based on texture dimensions (4x4 grid)
         _frameWidth = texture.Width / 4;
         _frameHeight = texture.Height / 4;
+    }
+
+    public Rectangle GetBounds()
+    {
+        // Collision box is slightly smaller than the sprite for better feel
+        // Centered on the bottom half of the sprite
+        int collisionWidth = _frameWidth / 2;
+        int collisionHeight = _frameHeight / 3;
+        return new Rectangle(
+            (int)_position.X - collisionWidth / 2,
+            (int)_position.Y - collisionHeight,
+            collisionWidth,
+            collisionHeight
+        );
     }
 
     public void Update(GameTime gameTime)
@@ -70,9 +91,40 @@ public class Player
             velocity.Normalize();
         }
 
-        // Move player
-        _position +=
-            velocity * Settings.PLAYER_MOVE_SPEED * (float)gameTime.ElapsedGameTime.TotalSeconds;
+        // Move player with collision detection
+        if (velocity.Length() > 0)
+        {
+            Vector2 movement =
+                velocity
+                * Settings.PLAYER_MOVE_SPEED
+                * (float)gameTime.ElapsedGameTime.TotalSeconds;
+            Vector2 newPosition = _position + movement;
+
+            // Check collision if collision manager is set
+            if (_collisionManager != null)
+            {
+                // Create bounds at new position
+                int collisionWidth = _frameWidth / 2;
+                int collisionHeight = _frameHeight / 3;
+                Rectangle newBounds = new Rectangle(
+                    (int)newPosition.X - collisionWidth / 2,
+                    (int)newPosition.Y - collisionHeight,
+                    collisionWidth,
+                    collisionHeight
+                );
+
+                // Only move if there's no collision
+                if (!_collisionManager.CheckCollision(newBounds))
+                {
+                    _position = newPosition;
+                }
+            }
+            else
+            {
+                // No collision manager, move freely
+                _position = newPosition;
+            }
+        }
 
         // Update animation
         if (_isMoving)

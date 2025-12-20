@@ -1,3 +1,5 @@
 # pokemon
 
-https://www.youtube.com/watch?v=fo4e3njyGy0&t=451s
+Next steps,
+
+- Add in NPC, they walk directly on the X or Y axis if player is near them.

@@ -20,6 +20,8 @@ public class Game1 : Game
     private Player _player;
     private WaterAnimationManager _waterAnimationManager;
     private CoastAnimationManager _coastAnimationManager;
+    private MonsterManager _monsterManager;
+    private CollisionManager _collisionManager;
 
     public Game1()
     {
@@ -52,13 +54,17 @@ public class Game1 : Game
         _tiledMap = Content.Load<TiledMap>("data/maps/world");
         _tiledMapRenderer = new TiledMapRenderer(GraphicsDevice, _tiledMap);
 
+        // Load collisions
+        _collisionManager = new CollisionManager();
+        _collisionManager.LoadCollisions(_tiledMap);
+
         // Load objects from the Objects layer
         _objectManager = new ObjectManager();
         _objectManager.LoadObjects(_tiledMap);
 
         // Load player
         var playerTexture = Content.Load<Texture2D>("graphics/characters/player");
-        _player = new Player(playerTexture, new Vector2(2560, 2560)); // Start in middle of map
+        _player = new Player(playerTexture, new Vector2(2560, 2560), _collisionManager); // Start in middle of map
 
         // Load water animation
         _waterAnimationManager = new WaterAnimationManager();
@@ -74,6 +80,14 @@ public class Game1 : Game
         _coastAnimationManager = new CoastAnimationManager();
         _coastAnimationManager.LoadContent(_tiledMap);
         _coastAnimationManager.LoadTexture(Content.Load<Texture2D>("graphics/tilesets/coast"));
+
+        // Load monsters and grass
+        _monsterManager = new MonsterManager();
+        _monsterManager.LoadTextures(
+            Content.Load<Texture2D>("graphics/objects/grass"),
+            Content.Load<Texture2D>("graphics/objects/grass_ice")
+        );
+        _monsterManager.LoadMonsters(_tiledMap);
     }
 
     protected override void Update(GameTime gameTime)
@@ -107,6 +121,7 @@ public class Game1 : Game
         _waterAnimationManager.Draw(_spriteBatch);
         _coastAnimationManager.Draw(_spriteBatch);
         _objectManager.Draw(_spriteBatch);
+        _monsterManager.Draw(_spriteBatch);
         _player.Draw(_spriteBatch);
         _spriteBatch.End();
 
