@@ -6,9 +6,12 @@ namespace pokemon_game.Graphics;
 public class Camera
 {
     private Vector2 _position;
-    private readonly float _zoom;
+    private readonly float _defaultZoom;
+    private float _currentZoom;
+    private float _targetZoom;
     private readonly int _viewportWidth;
     private readonly int _viewportHeight;
+    private readonly float _zoomSpeed = 0.8f; // Speed of zoom transition
 
     // Dead zone settings - area in the center where player can move without camera following
     private readonly float _deadZoneWidth;
@@ -27,7 +30,9 @@ public class Camera
     {
         _viewportWidth = viewportWidth;
         _viewportHeight = viewportHeight;
-        _zoom = zoom;
+        _defaultZoom = zoom;
+        _currentZoom = zoom;
+        _targetZoom = zoom;
         _deadZoneWidth = deadZoneWidth;
         _deadZoneHeight = deadZoneHeight;
         _position = Vector2.Zero;
@@ -37,8 +42,8 @@ public class Camera
     public void Follow(Vector2 targetPosition)
     {
         // Calculate the camera center in world space
-        var cameraCenterX = _position.X + (_viewportWidth / _zoom) / 2f;
-        var cameraCenterY = _position.Y + (_viewportHeight / _zoom) / 2f;
+        var cameraCenterX = _position.X + (_viewportWidth / _currentZoom) / 2f;
+        var cameraCenterY = _position.Y + (_viewportHeight / _currentZoom) / 2f;
 
         // Calculate the distance from camera center to target
         var deltaX = targetPosition.X - cameraCenterX;
@@ -73,6 +78,26 @@ public class Camera
     private void UpdateTransform()
     {
         Transform =
-            Matrix.CreateTranslation(new Vector3(-_position, 0)) * Matrix.CreateScale(_zoom);
+            Matrix.CreateTranslation(new Vector3(-_position, 0)) * Matrix.CreateScale(_currentZoom);
+    }
+
+    public void Update(GameTime gameTime)
+    {
+        // Smoothly interpolate current zoom towards target zoom
+        float deltaTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
+        _currentZoom = MathHelper.Lerp(_currentZoom, _targetZoom, _zoomSpeed * deltaTime);
+
+        // Update transform after zoom changes
+        UpdateTransform();
+    }
+
+    public void SetTargetZoom(float zoom)
+    {
+        _targetZoom = zoom;
+    }
+
+    public void ResetZoom()
+    {
+        _targetZoom = _defaultZoom;
     }
 }

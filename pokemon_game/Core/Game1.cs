@@ -6,6 +6,7 @@ using MonoGame.Extended.Tiled.Renderers;
 using pokemon_game.Entities;
 using pokemon_game.Graphics;
 using pokemon_game.Managers;
+using pokemon_game.UI;
 
 namespace pokemon_game.Core;
 
@@ -22,6 +23,13 @@ public class Game1 : Game
     private CoastAnimationManager _coastAnimationManager;
     private MonsterManager _monsterManager;
     private CollisionManager _collisionManager;
+    private CharacterManager _characterManager;
+    private DialogBox _dialogBox;
+    private SpriteFont _font;
+    private int _mapWidth;
+    private int _mapHeight;
+    private KeyboardState _previousKeyboardState;
+    private string _previousDialogLine;
 
     public Game1()
     {
@@ -50,9 +58,17 @@ public class Game1 : Game
     {
         _spriteBatch = new SpriteBatch(GraphicsDevice);
 
+        // Load font
+        _font = Content.Load<SpriteFont>("Consolas");
+        _dialogBox = new DialogBox(GraphicsDevice, _font);
+
         // Load the Tiled map (path relative to Content output directory, without .xnb extension)
         _tiledMap = Content.Load<TiledMap>("data/maps/world");
         _tiledMapRenderer = new TiledMapRenderer(GraphicsDevice, _tiledMap);
+
+        // Store map dimensions for zoom calculations
+        _mapWidth = _tiledMap.WidthInPixels;
+        _mapHeight = _tiledMap.HeightInPixels;
 
         // Load collisions
         _collisionManager = new CollisionManager();
@@ -88,6 +104,14 @@ public class Game1 : Game
             Content.Load<Texture2D>("graphics/objects/grass_ice")
         );
         _monsterManager.LoadMonsters(_tiledMap);
+
+        // Load NPCs from Entities layer
+        _characterManager = new CharacterManager();
+        _characterManager.LoadCharacters(_tiledMap, Content);
+
+        // Load notice icon for NPCs
+        var noticeIcon = Content.Load<Texture2D>("graphics/ui/notice");
+        NPC.SetNoticeIcon(noticeIcon);
     }
 
     protected override void Update(GameTime gameTime)
@@ -98,10 +122,67 @@ public class Game1 : Game
         )
             Exit();
 
-        _player.Update(gameTime);
+        // Handle M button for map zoom
+        var keyboardState = Keyboard.GetState();
+        if (keyboardState.IsKeyDown(Keys.M))
+        {
+            // Calculate zoom level to show entire map
+            float zoomX = (float)Settings.WINDOW_WIDTH / _mapWidth;
+            float zoomY = (float)Settings.WINDOW_HEIGHT / _mapHeight;
+            float mapZoom = MathHelper.Min(zoomX, zoomY);
+            _camera.SetTargetZoom(mapZoom);
+        }
+        else
+        {
+            _camera.ResetZoom();
+        }
+
+        // Update character manager first to check for interactions
+        _characterManager.Update(gameTime, _player.Position);
+
+        // Update player with blocking state
+        _player.Update(gameTime, _characterManager.IsPlayerBlocked);
+
+        // Update dialog box text streaming
+        if (_characterManager.HasActiveDialog())
+        {
+            string currentLine = _characterManager.GetCurrentDialogLine();
+
+            // Set new text when dialog line changes
+            if (currentLine != _previousDialogLine)
+            {
+                _dialogBox.SetText(currentLine);
+                _previousDialogLine = currentLine;
+            }
+
+            _dialogBox.Update(gameTime);
+        }
+
+        // Handle dialog advancement with Space key (only on key press, not hold)
+        if (
+            _characterManager.HasActiveDialog()
+            && keyboardState.IsKeyDown(Keys.Space)
+            && _previousKeyboardState.IsKeyUp(Keys.Space)
+        )
+        {
+            // If text is still streaming, complete it immediately
+            if (!_dialogBox.IsTextComplete())
+            {
+                _dialogBox.CompleteText();
+            }
+            else
+            {
+                // Otherwise advance to next dialog line
+                _characterManager.AdvanceDialog();
+            }
+        }
+
+        _camera.Update(gameTime);
         _camera.Follow(_player.Position);
         _waterAnimationManager.Update(gameTime);
         _coastAnimationManager.Update(gameTime);
+
+        _previousKeyboardState = keyboardState;
 
         base.Update(gameTime);
     }
@@ -122,8 +203,21 @@ public class Game1 : Game
         _coastAnimationManager.Draw(_spriteBatch);
         _objectManager.Draw(_spriteBatch);
         _monsterManager.Draw(_spriteBatch);
+        _characterManager.Draw(_spriteBatch);
         _player.Draw(_spriteBatch);
         _spriteBatch.End();
+
+        // Draw dialog box on top (without camera transform for UI, but needs position)
+        if (_characterManager.HasActiveDialog())
+        {
+            _spriteBatch.Begin(samplerState: SamplerState.PointClamp);
+            _dialogBox.Draw(
+                _spriteBatch,
+                _characterManager.GetActiveNPCPosition(),
+                _camera.Transform
+            );
+            _spriteBatch.End();
+        }
 
         base.Draw(gameTime);
     }

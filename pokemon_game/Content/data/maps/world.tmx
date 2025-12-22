@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.1" orientation="orthogonal" renderorder="right-down" width="86" height="86" tilewidth="64" tileheight="64" infinite="0" nextlayerid="14" nextobjectid="1152">
+<map version="1.10" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="86" height="86" tilewidth="64" tileheight="64" infinite="0" nextlayerid="14" nextobjectid="1152">
  <tileset firstgid="1" source="../tilesets/world.tsx"/>
  <tileset firstgid="211" source="../tilesets/objects.tsx"/>
  <tileset firstgid="242" source="../tilesets/Grass.tsx"/>
@@ -1898,13 +1898,6 @@
     <property name="monsters" value="Atrox,Pouch"/>
    </properties>
   </object>
-  <object id="356" x="2944" y="2944" width="64" height="64">
-   <properties>
-    <property name="biome" value="forest"/>
-    <property name="level" type="int" value="10"/>
-    <property name="monsters" value="Atrox,Pouch"/>
-   </properties>
-  </object>
   <object id="357" x="3008" y="2816" width="64" height="64">
    <properties>
     <property name="biome" value="forest"/>
@@ -1947,13 +1940,6 @@
     <property name="monsters" value="Atrox,Pouch"/>
    </properties>
   </object>
-  <object id="363" x="3008" y="2944" width="64" height="64">
-   <properties>
-    <property name="biome" value="forest"/>
-    <property name="level" type="int" value="10"/>
-    <property name="monsters" value="Atrox,Pouch"/>
-   </properties>
-  </object>
   <object id="364" x="3008" y="2880" width="64" height="64">
    <properties>
     <property name="biome" value="forest"/>
@@ -1962,13 +1948,6 @@
    </properties>
   </object>
   <object id="365" x="2944" y="2880" width="64" height="64">
-   <properties>
-    <property name="biome" value="forest"/>
-    <property name="level" type="int" value="10"/>
-    <property name="monsters" value="Atrox,Pouch"/>
-   </properties>
-  </object>
-  <object id="366" x="2880" y="2944" width="64" height="64">
    <properties>
     <property name="biome" value="forest"/>
     <property name="level" type="int" value="10"/>
@@ -3032,27 +3011,6 @@
     <property name="monsters" value="Atrox,Pouch"/>
    </properties>
   </object>
-  <object id="977" x="4096" y="2432" width="64" height="64">
-   <properties>
-    <property name="biome" value="sand"/>
-    <property name="level" type="int" value="10"/>
-    <property name="monsters" value="Atrox,Pouch"/>
-   </properties>
-  </object>
-  <object id="978" x="4160" y="2432" width="64" height="64">
-   <properties>
-    <property name="biome" value="sand"/>
-    <property name="level" type="int" value="10"/>
-    <property name="monsters" value="Atrox,Pouch"/>
-   </properties>
-  </object>
-  <object id="979" x="4224" y="2432" width="64" height="64">
-   <properties>
-    <property name="biome" value="sand"/>
-    <property name="level" type="int" value="10"/>
-    <property name="monsters" value="Atrox,Pouch"/>
-   </properties>
-  </object>
   <object id="983" x="4288" y="2304" width="64" height="64">
    <properties>
     <property name="biome" value="sand"/>
@@ -3095,27 +3053,6 @@
     <property name="monsters" value="Atrox,Pouch"/>
    </properties>
   </object>
-  <object id="989" x="4288" y="2432" width="64" height="64">
-   <properties>
-    <property name="biome" value="sand"/>
-    <property name="level" type="int" value="10"/>
-    <property name="monsters" value="Atrox,Pouch"/>
-   </properties>
-  </object>
-  <object id="990" x="4352" y="2432" width="64" height="64">
-   <properties>
-    <property name="biome" value="sand"/>
-    <property name="level" type="int" value="10"/>
-    <property name="monsters" value="Atrox,Pouch"/>
-   </properties>
-  </object>
-  <object id="991" x="4416" y="2432" width="64" height="64">
-   <properties>
-    <property name="biome" value="sand"/>
-    <property name="level" type="int" value="10"/>
-    <property name="monsters" value="Atrox,Pouch"/>
-   </properties>
-  </object>
   <object id="992" x="4480" y="2304" width="64" height="64">
    <properties>
     <property name="biome" value="sand"/>
@@ -3152,27 +3089,6 @@
    </properties>
   </object>
   <object id="997" x="4032" y="2368" width="64" height="64">
-   <properties>
-    <property name="biome" value="sand"/>
-    <property name="level" type="int" value="10"/>
-    <property name="monsters" value="Atrox,Pouch"/>
-   </properties>
-  </object>
-  <object id="998" x="4480" y="2432" width="64" height="64">
-   <properties>
-    <property name="biome" value="sand"/>
-    <property name="level" type="int" value="10"/>
-    <property name="monsters" value="Atrox,Pouch"/>
-   </properties>
-  </object>
-  <object id="999" x="3968" y="2432" width="64" height="64">
-   <properties>
-    <property name="biome" value="sand"/>
-    <property name="level" type="int" value="10"/>
-    <property name="monsters" value="Atrox,Pouch"/>
-   </properties>
-  </object>
-  <object id="1000" x="4032" y="2432" width="64" height="64">
    <properties>
     <property name="biome" value="sand"/>
     <property name="level" type="int" value="10"/>
@@ -4202,7 +4118,7 @@
   <object id="750" x="1924.67" y="936" width="57.3333" height="140.667"/>
   <object id="790" x="552" y="2733" width="1027" height="67"/>
   <object id="791" x="1567" y="2809" width="398" height="51"/>
-  <object id="792" x="1945" y="2865" width="163" height="51"/>
+  <object id="792" x="1945" y="2865" width="151" height="51"/>
   <object id="793" x="2187" y="2852" width="302" height="60"/>
   <object id="794" x="2445" y="2783" width="106" height="54"/>
   <object id="795" x="2515" y="2716" width="105" height="58"/>
@@ -4312,7 +4228,7 @@
   <object id="908" x="2048.75" y="4595.33" width="77" height="30.334"/>
   <object id="909" x="2113" y="4534.83" width="77" height="30.334"/>
   <object id="910" x="2179" y="4414.33" width="28" height="105.834"/>
-  <object id="911" x="1007" y="4386.08" width="822" height="36.834"/>
+  <object id="911" x="1007" y="4386.08" width="754" height="36.834"/>
   <object id="912" x="1794" y="4200.08" width="28" height="105.834"/>
   <object id="913" x="931" y="4224.08" width="28" height="105.834"/>
   <object id="914" x="962.5" y="4344.83" width="36" height="30.334"/>

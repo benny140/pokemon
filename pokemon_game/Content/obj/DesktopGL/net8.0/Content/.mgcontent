@@ -14,6 +14,7 @@
     <File>C:/Users/benja/Projects/pokemon/pokemon_game/Content/audio/overworld.ogg</File>
     <File>C:/Users/benja/Projects/pokemon/pokemon_game/Content/audio/scratch.mp3</File>
     <File>C:/Users/benja/Projects/pokemon/pokemon_game/Content/audio/splash.wav</File>
+    <File>C:/Users/benja/Projects/pokemon/pokemon_game/Content/Consolas.spritefont</File>
     <File>C:/Users/benja/Projects/pokemon/pokemon_game/Content/data/maps/arena.tmx</File>
     <File>C:/Users/benja/Projects/pokemon/pokemon_game/Content/data/maps/fire.tmx</File>
     <File>C:/Users/benja/Projects/pokemon/pokemon_game/Content/data/maps/hospital.tmx</File>
@@ -163,7 +164,6 @@
     <File>C:/Users/benja/Projects/pokemon/pokemon_game/Content/graphics/ui/star.png</File>
     <File>C:/Users/benja/Projects/pokemon/pokemon_game/Content/graphics/ui/sword_highlight.png</File>
     <File>C:/Users/benja/Projects/pokemon/pokemon_game/Content/graphics/ui/sword.png</File>
-    <File>C:/Users/benja/Projects/pokemon/pokemon_game/Content/Roboto.spritefont</File>
   </SourceFiles>
   <DestFiles>
     <File xsi:nil="true" />

@@ -432,7 +432,6 @@ C:\Users\benja\Projects\pokemon\pokemon_game\bin\Debug\net8.0\Content\graphics\u
 C:\Users\benja\Projects\pokemon\pokemon_game\bin\Debug\net8.0\Content\graphics\ui\star.xnb
 C:\Users\benja\Projects\pokemon\pokemon_game\bin\Debug\net8.0\Content\graphics\ui\sword.xnb
 C:\Users\benja\Projects\pokemon\pokemon_game\bin\Debug\net8.0\Content\graphics\ui\sword_highlight.xnb
-C:\Users\benja\Projects\pokemon\pokemon_game\bin\Debug\net8.0\Content\Roboto.xnb
 C:\Users\benja\Projects\pokemon\pokemon_game\bin\Debug\net8.0\pokemon_game.exe
 C:\Users\benja\Projects\pokemon\pokemon_game\bin\Debug\net8.0\pokemon_game.deps.json
 C:\Users\benja\Projects\pokemon\pokemon_game\bin\Debug\net8.0\pokemon_game.runtimeconfig.json
@@ -470,3 +469,4 @@ C:\Users\benja\Projects\pokemon\pokemon_game\obj\Debug\net8.0\refint\pokemon_gam
 C:\Users\benja\Projects\pokemon\pokemon_game\obj\Debug\net8.0\pokemon_game.pdb
 C:\Users\benja\Projects\pokemon\pokemon_game\obj\Debug\net8.0\pokemon_game.genruntimeconfig.cache
 C:\Users\benja\Projects\pokemon\pokemon_game\obj\Debug\net8.0\ref\pokemon_game.dll
+C:\Users\benja\Projects\pokemon\pokemon_game\bin\Debug\net8.0\Content\Consolas.xnb

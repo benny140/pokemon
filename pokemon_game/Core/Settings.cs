@@ -8,7 +8,7 @@ public static class Settings
     // Window and Game Constants
     public const int WINDOW_WIDTH = 1920;
     public const int WINDOW_HEIGHT = 1080;
-    public const float ZOOM_SCALE = 1f; // 2x more compact (shows 4x the area)
+    public const float ZOOM_SCALE = 0.8f; // Scale down for better visibility
     public const int TILE_SIZE = 64;
     public const int ANIMATION_SPEED = 6;
     public const int BATTLE_OUTLINE_WIDTH = 4;

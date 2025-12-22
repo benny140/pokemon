@@ -6,36 +6,18 @@ using pokemon_game.Managers;
 
 namespace pokemon_game.Entities;
 
-public class Player
+public class Player : Character
 {
-    private Texture2D _texture;
-    private Vector2 _position;
-    private int _currentFrame;
-    private int _direction; // 0=down, 1=left, 2=right, 3=up
-    private float _animationTimer;
-    private const float ANIMATION_SPEED = 0.15f;
-    private bool _isMoving;
-    private int _frameWidth;
-    private int _frameHeight;
     private CollisionManager _collisionManager;
-
-    public Vector2 Position => _position;
 
     public Player(
         Texture2D texture,
         Vector2 startPosition,
         CollisionManager collisionManager = null
     )
+        : base(texture, startPosition, "down")
     {
-        _texture = texture;
-        _position = startPosition;
-        _currentFrame = 0;
-        _direction = 0; // Start facing down
         _collisionManager = collisionManager;
-
-        // Calculate frame size based on texture dimensions (4x4 grid)
-        _frameWidth = texture.Width / 4;
-        _frameHeight = texture.Height / 4;
     }
 
     public Rectangle GetBounds()
@@ -52,8 +34,21 @@ public class Player
         );
     }
 
-    public void Update(GameTime gameTime)
+    public override void Update(GameTime gameTime)
     {
+        Update(gameTime, false);
+    }
+
+    public void Update(GameTime gameTime, bool isBlocked)
+    {
+        // Don't process input if blocked
+        if (isBlocked)
+        {
+            _isMoving = false;
+            _currentFrame = 0;
+            return;
+        }
+
         var keyboardState = Keyboard.GetState();
         var velocity = Vector2.Zero;
         _isMoving = false;
@@ -141,30 +136,5 @@ public class Player
             _currentFrame = 0; // Reset to idle frame when not moving
             _animationTimer = 0;
         }
-    }
-
-    public void Draw(SpriteBatch spriteBatch)
-    {
-        // Calculate source rectangle based on current frame and direction
-        var sourceRect = new Rectangle(
-            _currentFrame * _frameWidth,
-            _direction * _frameHeight,
-            _frameWidth,
-            _frameHeight
-        );
-
-        // Draw the player
-        // Use scale 1f - the view matrix already applies ZOOM_SCALE to match tiles
-        spriteBatch.Draw(
-            _texture,
-            _position,
-            sourceRect,
-            Color.White,
-            0f,
-            new Vector2(_frameWidth / 2, _frameHeight), // Origin at bottom-center for proper positioning
-            1f,
-            SpriteEffects.None,
-            _position.Y / 10000f // Layer based on Y position for depth sorting
-        );
     }
 }

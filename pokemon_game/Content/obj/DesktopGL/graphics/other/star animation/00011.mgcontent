@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/graphics/other/star animation/00011.png</SourceFile>
+  <SourceFile>c:/Users/benja/Projects/pokemon/pokemon_game/Content/graphics/other/star animation/00011.png</SourceFile>
   <SourceTime>2025-12-18T11:38:52.4751076+11:00</SourceTime>
-  <DestFile>c:/Users/benja/Projects/pokemon/pokemon_game/pokemon_game/Content/bin/DesktopGL/graphics/other/star animation/00011.xnb</DestFile>
-  <DestTime>2025-12-18T16:59:00.870774+11:00</DestTime>
+  <DestFile>c:/Users/benja/Projects/pokemon/pokemon_game/Content/bin/DesktopGL/graphics/other/star animation/00011.xnb</DestFile>
+  <DestTime>2025-12-22T15:45:33.872982+11:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2025-10-21T01:25:32+11:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
