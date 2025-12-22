@@ -205,6 +205,7 @@ public class Game1 : Game
         _monsterManager.Draw(_spriteBatch);
         _characterManager.Draw(_spriteBatch);
         _player.Draw(_spriteBatch);
+        _objectManager.DrawTopObjects(_spriteBatch);
         _spriteBatch.End();
 
         // Draw dialog box on top (without camera transform for UI, but needs position)
