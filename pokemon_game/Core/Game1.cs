@@ -24,12 +24,27 @@ public class Game1 : Game
     private MonsterManager _monsterManager;
     private CollisionManager _collisionManager;
     private CharacterManager _characterManager;
+    private TransitionManager _transitionManager;
+    private FadeEffect _fadeEffect;
     private DialogBox _dialogBox;
     private SpriteFont _font;
     private int _mapWidth;
     private int _mapHeight;
     private KeyboardState _previousKeyboardState;
     private string _previousDialogLine;
+    private string _currentMapName;
+    private string _previousMapName;
+    private string _pendingMapTransition;
+
+    private enum TransitionState
+    {
+        None,
+        FadingOut,
+        Loading,
+        FadingIn,
+    }
+
+    private TransitionState _transitionState = TransitionState.None;
 
     public Game1()
     {
@@ -61,9 +76,23 @@ public class Game1 : Game
         // Load font
         _font = Content.Load<SpriteFont>("Consolas");
         _dialogBox = new DialogBox(GraphicsDevice, _font);
+        _fadeEffect = new FadeEffect(GraphicsDevice);
+        _transitionManager = new TransitionManager();
 
-        // Load the Tiled map (path relative to Content output directory, without .xnb extension)
-        _tiledMap = Content.Load<TiledMap>("data/maps/world");
+        // Start with world map, assume we came from house
+        _previousMapName = "house";
+        _currentMapName = "world";
+        LoadMap(_currentMapName);
+
+        // Load notice icon for NPCs
+        var noticeIcon = Content.Load<Texture2D>("graphics/ui/notice");
+        NPC.SetNoticeIcon(noticeIcon);
+    }
+
+    private void LoadMap(string mapName)
+    {
+        // Load the Tiled map
+        _tiledMap = Content.Load<TiledMap>($"data/maps/{mapName}");
         _tiledMapRenderer = new TiledMapRenderer(GraphicsDevice, _tiledMap);
 
         // Store map dimensions for zoom calculations
@@ -74,13 +103,40 @@ public class Game1 : Game
         _collisionManager = new CollisionManager();
         _collisionManager.LoadCollisions(_tiledMap);
 
+        // Load transitions
+        _transitionManager.LoadTransitions(_tiledMap);
+
         // Load objects from the Objects layer
         _objectManager = new ObjectManager();
         _objectManager.LoadObjects(_tiledMap);
 
-        // Load player
-        var playerTexture = Content.Load<Texture2D>("graphics/characters/player");
-        _player = new Player(playerTexture, new Vector2(2560, 2560), _collisionManager); // Start in middle of map
+        // Find spawn point for player based on previous map
+        Vector2 spawnPosition = FindSpawnPosition(_tiledMap, _previousMapName);
+
+        // Create or update player
+        if (_player == null)
+        {
+            var playerTexture = Content.Load<Texture2D>("graphics/characters/player");
+            _player = new Player(playerTexture, spawnPosition, _collisionManager);
+        }
+        else
+        {
+            // Update existing player position and collision manager
+            typeof(Player)
+                .GetField(
+                    "_position",
+                    System.Reflection.BindingFlags.NonPublic
+                        | System.Reflection.BindingFlags.Instance
+                )
+                ?.SetValue(_player, spawnPosition);
+            typeof(Player)
+                .GetField(
+                    "_collisionManager",
+                    System.Reflection.BindingFlags.NonPublic
+                        | System.Reflection.BindingFlags.Instance
+                )
+                ?.SetValue(_player, _collisionManager);
+        }
 
         // Load water animation
         _waterAnimationManager = new WaterAnimationManager();
@@ -109,9 +165,33 @@ public class Game1 : Game
         _characterManager = new CharacterManager();
         _characterManager.LoadCharacters(_tiledMap, Content);
 
-        // Load notice icon for NPCs
-        var noticeIcon = Content.Load<Texture2D>("graphics/ui/notice");
-        NPC.SetNoticeIcon(noticeIcon);
+        _currentMapName = mapName;
+    }
+
+    private Vector2 FindSpawnPosition(TiledMap tiledMap, string fromMap)
+    {
+        var entitiesLayer = tiledMap.GetLayer<TiledMapObjectLayer>("Entities");
+        if (entitiesLayer != null)
+        {
+            foreach (var obj in entitiesLayer.Objects)
+            {
+                if (obj.Name == "Player")
+                {
+                    // Check if this spawn point matches where we came from
+                    if (obj.Properties.ContainsKey("pos"))
+                    {
+                        string pos = obj.Properties["pos"].ToString();
+                        if (pos == fromMap)
+                        {
+                            return new Vector2(obj.Position.X, obj.Position.Y);
+                        }
+                    }
+                }
+            }
+        }
+
+        // Default to center of map if no spawn point found
+        return new Vector2(_mapWidth / 2, _mapHeight / 2);
     }
 
     protected override void Update(GameTime gameTime)
@@ -137,51 +217,88 @@ public class Game1 : Game
             _camera.ResetZoom();
         }
 
-        // Update character manager first to check for interactions
-        _characterManager.Update(gameTime, _player.Position);
+        // Update fade effect
+        _fadeEffect.Update(gameTime);
 
-        // Update player with blocking state
-        _player.Update(gameTime, _characterManager.IsPlayerBlocked);
-
-        // Update dialog box text streaming
-        if (_characterManager.HasActiveDialog())
+        // Handle transition states
+        if (_transitionState == TransitionState.FadingOut && _fadeEffect.IsFadeComplete)
         {
-            string currentLine = _characterManager.GetCurrentDialogLine();
-
-            // Set new text when dialog line changes
-            if (currentLine != _previousDialogLine)
-            {
-                _dialogBox.SetText(currentLine);
-                _previousDialogLine = currentLine;
-            }
-
-            _dialogBox.Update(gameTime);
+            // Fade out complete, load new map
+            _transitionState = TransitionState.Loading;
+            _previousMapName = _currentMapName; // Store where we're coming from
+            LoadMap(_pendingMapTransition);
+            _transitionState = TransitionState.FadingIn;
+            _fadeEffect.StartFadeIn();
+        }
+        else if (_transitionState == TransitionState.FadingIn && _fadeEffect.IsFadeComplete)
+        {
+            // Fade in complete, transition done
+            _transitionState = TransitionState.None;
         }
 
-        // Handle dialog advancement with Space key (only on key press, not hold)
-        if (
-            _characterManager.HasActiveDialog()
-            && keyboardState.IsKeyDown(Keys.Space)
-            && _previousKeyboardState.IsKeyUp(Keys.Space)
-        )
+        // Only update game logic when not transitioning
+        if (_transitionState == TransitionState.None)
         {
-            // If text is still streaming, complete it immediately
-            if (!_dialogBox.IsTextComplete())
+            // Check for map transitions
+            string targetMap = _transitionManager.CheckTransition(_player.GetBounds());
+            if (!string.IsNullOrEmpty(targetMap))
             {
-                _dialogBox.CompleteText();
-            }
-            else
-            {
-                // Otherwise advance to next dialog line
-                _characterManager.AdvanceDialog();
+                _pendingMapTransition = targetMap;
+                _transitionState = TransitionState.FadingOut;
+                _fadeEffect.StartFadeOut();
             }
         }
 
-        _camera.Update(gameTime);
-        _camera.Follow(_player.Position);
-        _waterAnimationManager.Update(gameTime);
-        _coastAnimationManager.Update(gameTime);
+        // Update game when not loading
+        if (_transitionState != TransitionState.Loading)
+            // Update game when not loading
+            if (_transitionState != TransitionState.Loading)
+            {
+                // Update character manager first to check for interactions
+                _characterManager.Update(gameTime, _player.Position);
 
+                // Update player with blocking state
+                _player.Update(gameTime, _characterManager.IsPlayerBlocked);
+
+                // Update dialog box text streaming
+                if (_characterManager.HasActiveDialog())
+                {
+                    string currentLine = _characterManager.GetCurrentDialogLine();
+
+                    // Set new text when dialog line changes
+                    if (currentLine != _previousDialogLine)
+                    {
+                        _dialogBox.SetText(currentLine);
+                        _previousDialogLine = currentLine;
+                    }
+
+                    _dialogBox.Update(gameTime);
+                }
+
+                // Handle dialog advancement with Space key (only on key press, not hold)
+                if (
+                    _characterManager.HasActiveDialog()
+                    && keyboardState.IsKeyDown(Keys.Space)
+                    && _previousKeyboardState.IsKeyUp(Keys.Space)
+                )
+                {
+                    // If text is still streaming, complete it immediately
+                    if (!_dialogBox.IsTextComplete())
+                    {
+                        _dialogBox.CompleteText();
+                    }
+                    else
+                    {
+                        // Otherwise advance to next dialog line
+                        _characterManager.AdvanceDialog();
+                    }
+                }
+
+                _camera.Update(gameTime);
+                _camera.Follow(_player.Position);
+                _waterAnimationManager.Update(gameTime);
+                _coastAnimationManager.Update(gameTime);
+            }
         _previousKeyboardState = keyboardState;
 
         base.Update(gameTime);
@@ -219,6 +336,11 @@ public class Game1 : Game
             );
             _spriteBatch.End();
         }
+
+        // Draw fade effect on top of everything
+        _spriteBatch.Begin(samplerState: SamplerState.PointClamp);
+        _fadeEffect.Draw(_spriteBatch);
+        _spriteBatch.End();
 
         base.Draw(gameTime);
     }
