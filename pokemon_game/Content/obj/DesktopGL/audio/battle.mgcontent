@@ -3,7 +3,7 @@
   <SourceFile>c:/Users/benja/Projects/pokemon/pokemon_game/Content/audio/battle.ogg</SourceFile>
   <SourceTime>2025-12-18T11:39:06.9200057+11:00</SourceTime>
   <DestFile>c:/Users/benja/Projects/pokemon/pokemon_game/Content/bin/DesktopGL/audio/battle.xnb</DestFile>
-  <DestTime>2025-12-22T15:45:28.0673674+11:00</DestTime>
+  <DestTime>2025-12-23T18:12:12.4713084+11:00</DestTime>
   <Importer>OggImporter</Importer>
   <ImporterTime>2025-10-21T01:25:32+11:00</ImporterTime>
   <Processor>SongProcessor</Processor>

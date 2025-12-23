@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using MonoGame.Extended.Tiled;
@@ -15,6 +16,13 @@ public class CharacterManager
     private bool _isPlayerBlocked;
     private List<string> _currentDialog;
     private int _currentDialogIndex;
+    private bool _dialogComplete;
+    private static SoundEffect _noticeSound;
+
+    public static void SetNoticeSound(SoundEffect sound)
+    {
+        _noticeSound = sound;
+    }
 
     public bool IsPlayerBlocked => _isPlayerBlocked;
     public NPC ActiveNPC => _activeNPC;
@@ -100,6 +108,10 @@ public class CharacterManager
                     _activeNPC = npc;
                     _activeNPC.StartApproaching(playerPosition);
                     _isPlayerBlocked = true;
+
+                    // Play notice sound
+                    _noticeSound?.Play();
+
                     break;
                 }
             }
@@ -111,7 +123,7 @@ public class CharacterManager
             _activeNPC.TriggerDialog();
             _currentDialog = _activeNPC.GetDialog();
             _currentDialogIndex = 0;
-            // TODO: Show dialog UI here
+            _dialogComplete = false;
         }
     }
 
@@ -124,12 +136,11 @@ public class CharacterManager
 
         if (_currentDialogIndex >= _currentDialog.Count)
         {
-            // Dialog finished
-            _activeNPC.MarkAsDefeated();
-            _activeNPC = null;
+            // Dialog finished, mark as complete to trigger battle
             _currentDialog = null;
             _currentDialogIndex = 0;
-            _isPlayerBlocked = false;
+            _dialogComplete = true;
+            // Keep _isPlayerBlocked true and _activeNPC set for battle transition
         }
     }
 
@@ -148,6 +159,26 @@ public class CharacterManager
     public bool HasActiveDialog()
     {
         return _currentDialog != null && _currentDialogIndex < _currentDialog.Count;
+    }
+
+    public bool ShouldStartBattle()
+    {
+        // Start battle after dialog completes
+        return _activeNPC != null && _dialogComplete;
+    }
+
+    public void EndBattle()
+    {
+        // End battle and mark NPC as defeated
+        if (_activeNPC != null)
+        {
+            _activeNPC.MarkAsDefeated();
+            _activeNPC = null;
+        }
+        _currentDialog = null;
+        _currentDialogIndex = 0;
+        _dialogComplete = false;
+        _isPlayerBlocked = false;
     }
 
     public void Draw(SpriteBatch spriteBatch)

@@ -3,7 +3,7 @@
   <SourceFile>c:/Users/benja/Projects/pokemon/pokemon_game/Content/audio/notice.wav</SourceFile>
   <SourceTime>2025-12-18T11:39:06.6230636+11:00</SourceTime>
   <DestFile>c:/Users/benja/Projects/pokemon/pokemon_game/Content/bin/DesktopGL/audio/notice.xnb</DestFile>
-  <DestTime>2025-12-22T15:45:29.366705+11:00</DestTime>
+  <DestTime>2025-12-23T18:12:13.8763603+11:00</DestTime>
   <Importer>WavImporter</Importer>
   <ImporterTime>2025-10-21T01:25:32+11:00</ImporterTime>
   <Processor>SoundEffectProcessor</Processor>

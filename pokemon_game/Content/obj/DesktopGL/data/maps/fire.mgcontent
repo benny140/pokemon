@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <SourceFile>c:/Users/benja/Projects/pokemon/pokemon_game/Content/data/maps/fire.tmx</SourceFile>
-  <SourceTime>2025-12-18T11:39:05.2462985+11:00</SourceTime>
+  <SourceTime>2025-12-22T17:12:49.4820371+11:00</SourceTime>
   <DestFile>c:/Users/benja/Projects/pokemon/pokemon_game/Content/bin/DesktopGL/data/maps/fire.xnb</DestFile>
-  <DestTime>2025-12-22T15:45:31.4511058+11:00</DestTime>
+  <DestTime>2025-12-23T18:12:16.2700032+11:00</DestTime>
   <Importer>TiledMapImporter</Importer>
   <ImporterTime>2025-11-29T19:05:08+11:00</ImporterTime>
   <Processor>TiledMapProcessor</Processor>

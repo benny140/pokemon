@@ -720,6 +720,125 @@ public static class GameData
     >
     {
         {
+            "Bulbasaur",
+            new MonsterData(
+                new MonsterStats("plant", 20, 22, 5, 10, 6, 1.2f),
+                new Dictionary<int, string>
+                {
+                    { 0, "scratch" },
+                    { 5, "spark" },
+                    { 10, "heal" },
+                },
+                ("Ivysaur", 16)
+            )
+        },
+        {
+            "Ivysaur",
+            new MonsterData(
+                new MonsterStats("plant", 28, 26, 6, 12, 8, 1.4f),
+                new Dictionary<int, string>
+                {
+                    { 0, "scratch" },
+                    { 5, "spark" },
+                    { 10, "heal" },
+                },
+                ("Venusaur", 32)
+            )
+        },
+        {
+            "Venusaur",
+            new MonsterData(
+                new MonsterStats("plant", 35, 32, 8, 15, 10, 1.6f),
+                new Dictionary<int, string>
+                {
+                    { 0, "scratch" },
+                    { 5, "spark" },
+                    { 10, "heal" },
+                },
+                null
+            )
+        },
+        {
+            "Charmander",
+            new MonsterData(
+                new MonsterStats("fire", 18, 24, 6, 8, 5, 1.3f),
+                new Dictionary<int, string>
+                {
+                    { 0, "scratch" },
+                    { 5, "spark" },
+                    { 10, "fire" },
+                },
+                ("Charmeleon", 16)
+            )
+        },
+        {
+            "Charmeleon",
+            new MonsterData(
+                new MonsterStats("fire", 26, 28, 8, 10, 7, 1.5f),
+                new Dictionary<int, string>
+                {
+                    { 0, "scratch" },
+                    { 5, "spark" },
+                    { 10, "fire" },
+                },
+                ("Charizard", 36)
+            )
+        },
+        {
+            "Charizard",
+            new MonsterData(
+                new MonsterStats("fire", 34, 34, 10, 12, 9, 1.8f),
+                new Dictionary<int, string>
+                {
+                    { 0, "scratch" },
+                    { 5, "spark" },
+                    { 10, "fire" },
+                    { 20, "explosion" },
+                },
+                null
+            )
+        },
+        {
+            "Squirtle",
+            new MonsterData(
+                new MonsterStats("water", 19, 22, 5, 12, 6, 1.1f),
+                new Dictionary<int, string>
+                {
+                    { 0, "scratch" },
+                    { 5, "spark" },
+                    { 10, "splash" },
+                },
+                ("Wartortle", 16)
+            )
+        },
+        {
+            "Wartortle",
+            new MonsterData(
+                new MonsterStats("water", 27, 26, 6, 14, 8, 1.3f),
+                new Dictionary<int, string>
+                {
+                    { 0, "scratch" },
+                    { 5, "spark" },
+                    { 10, "splash" },
+                },
+                ("Blastoise", 36)
+            )
+        },
+        {
+            "Blastoise",
+            new MonsterData(
+                new MonsterStats("water", 36, 30, 8, 16, 10, 1.5f),
+                new Dictionary<int, string>
+                {
+                    { 0, "scratch" },
+                    { 5, "spark" },
+                    { 10, "splash" },
+                    { 20, "ice" },
+                },
+                null
+            )
+        },
+        {
             "Plumette",
             new MonsterData(
                 new MonsterStats("plant", 15, 17, 4, 8, 5, 1f),

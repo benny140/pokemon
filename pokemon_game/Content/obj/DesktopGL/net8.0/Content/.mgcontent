@@ -140,6 +140,15 @@
     <File>C:/Users/benja/Projects/pokemon/pokemon_game/Content/graphics/other/star animation/00027.png</File>
     <File>C:/Users/benja/Projects/pokemon/pokemon_game/Content/graphics/other/star animation/00028.png</File>
     <File>C:/Users/benja/Projects/pokemon/pokemon_game/Content/graphics/other/star animation/00029.png</File>
+    <File>C:/Users/benja/Projects/pokemon/pokemon_game/Content/graphics/pokemon/blastoise.png</File>
+    <File>C:/Users/benja/Projects/pokemon/pokemon_game/Content/graphics/pokemon/bulbasaur.png</File>
+    <File>C:/Users/benja/Projects/pokemon/pokemon_game/Content/graphics/pokemon/charizard.png</File>
+    <File>C:/Users/benja/Projects/pokemon/pokemon_game/Content/graphics/pokemon/charmander.png</File>
+    <File>C:/Users/benja/Projects/pokemon/pokemon_game/Content/graphics/pokemon/charmeleon.png</File>
+    <File>C:/Users/benja/Projects/pokemon/pokemon_game/Content/graphics/pokemon/ivysaur.png</File>
+    <File>C:/Users/benja/Projects/pokemon/pokemon_game/Content/graphics/pokemon/squirtle.png</File>
+    <File>C:/Users/benja/Projects/pokemon/pokemon_game/Content/graphics/pokemon/venusaur.png</File>
+    <File>C:/Users/benja/Projects/pokemon/pokemon_game/Content/graphics/pokemon/wartortle.png</File>
     <File>C:/Users/benja/Projects/pokemon/pokemon_game/Content/graphics/tilesets/coast.png</File>
     <File>C:/Users/benja/Projects/pokemon/pokemon_game/Content/graphics/tilesets/indoor.png</File>
     <File>C:/Users/benja/Projects/pokemon/pokemon_game/Content/graphics/tilesets/water/0.png</File>
@@ -166,6 +175,15 @@
     <File>C:/Users/benja/Projects/pokemon/pokemon_game/Content/graphics/ui/sword.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

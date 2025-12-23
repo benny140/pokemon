@@ -470,3 +470,12 @@ C:\Users\benja\Projects\pokemon\pokemon_game\obj\Debug\net8.0\pokemon_game.pdb
 C:\Users\benja\Projects\pokemon\pokemon_game\obj\Debug\net8.0\pokemon_game.genruntimeconfig.cache
 C:\Users\benja\Projects\pokemon\pokemon_game\obj\Debug\net8.0\ref\pokemon_game.dll
 C:\Users\benja\Projects\pokemon\pokemon_game\bin\Debug\net8.0\Content\Consolas.xnb
+C:\Users\benja\Projects\pokemon\pokemon_game\bin\Debug\net8.0\Content\graphics\pokemon\blastoise.xnb
+C:\Users\benja\Projects\pokemon\pokemon_game\bin\Debug\net8.0\Content\graphics\pokemon\bulbasaur.xnb
+C:\Users\benja\Projects\pokemon\pokemon_game\bin\Debug\net8.0\Content\graphics\pokemon\charizard.xnb
+C:\Users\benja\Projects\pokemon\pokemon_game\bin\Debug\net8.0\Content\graphics\pokemon\charmander.xnb
+C:\Users\benja\Projects\pokemon\pokemon_game\bin\Debug\net8.0\Content\graphics\pokemon\charmeleon.xnb
+C:\Users\benja\Projects\pokemon\pokemon_game\bin\Debug\net8.0\Content\graphics\pokemon\ivysaur.xnb
+C:\Users\benja\Projects\pokemon\pokemon_game\bin\Debug\net8.0\Content\graphics\pokemon\squirtle.xnb
+C:\Users\benja\Projects\pokemon\pokemon_game\bin\Debug\net8.0\Content\graphics\pokemon\venusaur.xnb
+C:\Users\benja\Projects\pokemon\pokemon_game\bin\Debug\net8.0\Content\graphics\pokemon\wartortle.xnb

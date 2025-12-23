@@ -86,4 +86,33 @@ public class Character
             _position.Y / 10000f // Layer based on Y position for depth sorting
         );
     }
+
+    public virtual void DrawStatic(
+        SpriteBatch spriteBatch,
+        Vector2 position,
+        float scale = 1f,
+        int? direction = null
+    )
+    {
+        // Draw the character at a specific position without depth sorting (for UI/battle scenes)
+        int drawDirection = direction ?? _direction;
+        var sourceRect = new Rectangle(
+            0, // Use first frame (idle)
+            drawDirection * _frameHeight,
+            _frameWidth,
+            _frameHeight
+        );
+
+        spriteBatch.Draw(
+            _texture,
+            position,
+            sourceRect,
+            Color.White,
+            0f,
+            new Vector2(_frameWidth / 2, _frameHeight / 2), // Origin at center
+            scale,
+            SpriteEffects.None,
+            0.5f // Fixed layer for UI elements
+        );
+    }
 }

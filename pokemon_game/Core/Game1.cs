@@ -1,4 +1,5 @@
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using MonoGame.Extended.Tiled;
@@ -27,6 +28,7 @@ public class Game1 : Game
     private TransitionManager _transitionManager;
     private FadeEffect _fadeEffect;
     private DialogBox _dialogBox;
+    private BattleScene _battleScene;
     private SpriteFont _font;
     private int _mapWidth;
     private int _mapHeight;
@@ -44,7 +46,14 @@ public class Game1 : Game
         FadingIn,
     }
 
+    private enum GameState
+    {
+        Exploration,
+        Battle,
+    }
+
     private TransitionState _transitionState = TransitionState.None;
+    private GameState _gameState = GameState.Exploration;
 
     public Game1()
     {
@@ -76,6 +85,7 @@ public class Game1 : Game
         // Load font
         _font = Content.Load<SpriteFont>("Consolas");
         _dialogBox = new DialogBox(GraphicsDevice, _font);
+        _battleScene = new BattleScene(GraphicsDevice, _font, Content);
         _fadeEffect = new FadeEffect(GraphicsDevice);
         _transitionManager = new TransitionManager();
 
@@ -84,9 +94,12 @@ public class Game1 : Game
         _currentMapName = "world";
         LoadMap(_currentMapName);
 
-        // Load notice icon for NPCs
+        // Load notice icon and sound for NPCs
         var noticeIcon = Content.Load<Texture2D>("graphics/ui/notice");
         NPC.SetNoticeIcon(noticeIcon);
+
+        var noticeSound = Content.Load<SoundEffect>("audio/notice");
+        CharacterManager.SetNoticeSound(noticeSound);
     }
 
     private void LoadMap(string mapName)
@@ -251,11 +264,31 @@ public class Game1 : Game
 
         // Update game when not loading
         if (_transitionState != TransitionState.Loading)
-            // Update game when not loading
-            if (_transitionState != TransitionState.Loading)
+        {
+            if (_gameState == GameState.Battle)
+            {
+                // Update battle scene
+                _battleScene.Update(gameTime);
+
+                // Check if battle is won
+                if (_battleScene.IsBattleWon)
+                {
+                    _battleScene.EndBattle();
+                    _characterManager.EndBattle();
+                    _gameState = GameState.Exploration;
+                }
+            }
+            else if (_gameState == GameState.Exploration)
             {
                 // Update character manager first to check for interactions
                 _characterManager.Update(gameTime, _player.Position);
+
+                // Check if battle should start
+                if (_characterManager.ShouldStartBattle())
+                {
+                    _gameState = GameState.Battle;
+                    _battleScene.StartBattle(_player, _characterManager.ActiveNPC);
+                }
 
                 // Update player with blocking state
                 _player.Update(gameTime, _characterManager.IsPlayerBlocked);
@@ -299,6 +332,7 @@ public class Game1 : Game
                 _waterAnimationManager.Update(gameTime);
                 _coastAnimationManager.Update(gameTime);
             }
+        }
         _previousKeyboardState = keyboardState;
 
         base.Update(gameTime);
@@ -307,34 +341,46 @@ public class Game1 : Game
     protected override void Draw(GameTime gameTime)
     {
         GraphicsDevice.Clear(Settings.Colors.Gray);
-        _tiledMapRenderer.Draw(_camera.Transform);
 
-        // Draw water animation, object sprites and player with camera transform
-        // Use SpriteSortMode.FrontToBack to sort by layer depth (Y position)
-        _spriteBatch.Begin(
-            sortMode: SpriteSortMode.FrontToBack,
-            transformMatrix: _camera.Transform,
-            samplerState: SamplerState.PointClamp
-        );
-        _waterAnimationManager.Draw(_spriteBatch);
-        _coastAnimationManager.Draw(_spriteBatch);
-        _objectManager.Draw(_spriteBatch);
-        _monsterManager.Draw(_spriteBatch);
-        _characterManager.Draw(_spriteBatch);
-        _player.Draw(_spriteBatch);
-        _objectManager.DrawTopObjects(_spriteBatch);
-        _spriteBatch.End();
-
-        // Draw dialog box on top (without camera transform for UI, but needs position)
-        if (_characterManager.HasActiveDialog())
+        if (_gameState == GameState.Battle)
         {
+            // Draw battle scene
             _spriteBatch.Begin(samplerState: SamplerState.PointClamp);
-            _dialogBox.Draw(
-                _spriteBatch,
-                _characterManager.GetActiveNPCPosition(),
-                _camera.Transform
-            );
+            _battleScene.Draw(_spriteBatch);
             _spriteBatch.End();
+        }
+        else
+        {
+            // Draw exploration scene
+            _tiledMapRenderer.Draw(_camera.Transform);
+
+            // Draw water animation, object sprites and player with camera transform
+            // Use SpriteSortMode.FrontToBack to sort by layer depth (Y position)
+            _spriteBatch.Begin(
+                sortMode: SpriteSortMode.FrontToBack,
+                transformMatrix: _camera.Transform,
+                samplerState: SamplerState.PointClamp
+            );
+            _waterAnimationManager.Draw(_spriteBatch);
+            _coastAnimationManager.Draw(_spriteBatch);
+            _objectManager.Draw(_spriteBatch);
+            _monsterManager.Draw(_spriteBatch);
+            _characterManager.Draw(_spriteBatch);
+            _player.Draw(_spriteBatch);
+            _objectManager.DrawTopObjects(_spriteBatch);
+            _spriteBatch.End();
+
+            // Draw dialog box on top (without camera transform for UI, but needs position)
+            if (_characterManager.HasActiveDialog())
+            {
+                _spriteBatch.Begin(samplerState: SamplerState.PointClamp);
+                _dialogBox.Draw(
+                    _spriteBatch,
+                    _characterManager.GetActiveNPCPosition(),
+                    _camera.Transform
+                );
+                _spriteBatch.End();
+            }
         }
 
         // Draw fade effect on top of everything
