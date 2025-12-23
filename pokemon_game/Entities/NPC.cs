@@ -74,7 +74,10 @@ public class NPC : Character
         _idleRotationTimer = 0;
     }
 
-    public bool CheckPlayerInView(Vector2 playerPosition)
+    public bool CheckPlayerInView(
+        Vector2 playerPosition,
+        Managers.CollisionManager collisionManager
+    )
     {
         // Don't trigger if already triggered or approaching
         if (_hasTriggered || _isApproaching)
@@ -114,7 +117,22 @@ public class NPC : Character
             _ => false,
         };
 
-        return isInFront && isAligned;
+        if (!isInFront || !isAligned)
+            return false;
+
+        // Check line of sight - ensure no collision tiles block the view
+        if (collisionManager != null)
+        {
+            bool hasLineOfSight = collisionManager.HasLineOfSight(
+                _position,
+                playerPosition,
+                Settings.TILE_SIZE
+            );
+            if (!hasLineOfSight)
+                return false;
+        }
+
+        return true;
     }
 
     public void StartApproaching(Vector2 playerPosition)

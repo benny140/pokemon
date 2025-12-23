@@ -12,6 +12,7 @@ public class CharacterManager
 {
     private readonly List<NPC> _npcs = new List<NPC>();
     private ContentManager _content;
+    private CollisionManager _collisionManager;
     private NPC _activeNPC;
     private bool _isPlayerBlocked;
     private List<string> _currentDialog;
@@ -32,9 +33,14 @@ public class CharacterManager
         return _activeNPC?.Position ?? Vector2.Zero;
     }
 
-    public void LoadCharacters(TiledMap tiledMap, ContentManager content)
+    public void LoadCharacters(
+        TiledMap tiledMap,
+        ContentManager content,
+        CollisionManager collisionManager
+    )
     {
         _content = content;
+        _collisionManager = collisionManager;
         _npcs.Clear();
 
         var entitiesLayer = tiledMap.GetLayer<TiledMapObjectLayer>("Entities");
@@ -102,7 +108,7 @@ public class CharacterManager
         {
             foreach (var npc in _npcs)
             {
-                if (npc.CheckPlayerInView(playerPosition))
+                if (npc.CheckPlayerInView(playerPosition, _collisionManager))
                 {
                     // Trigger this NPC
                     _activeNPC = npc;

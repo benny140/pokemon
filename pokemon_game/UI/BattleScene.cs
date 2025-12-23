@@ -210,13 +210,13 @@ public class BattleScene
             DrawPokemonOnBoard(spriteBatch, boardX, boardY);
 
             // Draw instructions at the bottom
-            string instructions = "Press F9 to win the battle (placeholder)";
+            string instructions = "Battle in Progress - Press F9 to win (placeholder for testing)";
             Vector2 instructionsSize = _font.MeasureString(instructions);
             spriteBatch.DrawString(
                 _font,
                 instructions,
                 new Vector2(centerX - instructionsSize.X / 2, Settings.WINDOW_HEIGHT - 40),
-                Color.White
+                Color.Yellow
             );
         }
     }
@@ -224,13 +224,23 @@ public class BattleScene
     private void DrawPositioningPhase(SpriteBatch spriteBatch, int boardX, int boardY, int centerX)
     {
         // Draw title
-        string title = "Position Your Pokemon in Column 1";
+        string title = "SETUP PHASE: Position Your Pokemon";
         Vector2 titleSize = _font.MeasureString(title);
         spriteBatch.DrawString(
             _font,
             title,
             new Vector2(centerX - titleSize.X / 2, 40),
             Color.Yellow
+        );
+
+        // Draw subtitle with clearer instructions
+        string subtitle = "Place each Pokemon in a row of Column 1";
+        Vector2 subtitleSize = _font.MeasureString(subtitle);
+        spriteBatch.DrawString(
+            _font,
+            subtitle,
+            new Vector2(centerX - subtitleSize.X / 2, 70),
+            Color.White
         );
 
         // Draw the board
@@ -310,7 +320,8 @@ public class BattleScene
         }
 
         // Draw instructions
-        string instructions = "Arrow Keys: Navigate | UP/DOWN: Change Row | ENTER: Start Battle";
+        string instructions =
+            "LEFT/RIGHT: Select Pokemon | UP/DOWN: Choose Row | ENTER: Start Battle";
         Vector2 instrSize = _font.MeasureString(instructions);
         spriteBatch.DrawString(
             _font,
@@ -319,14 +330,25 @@ public class BattleScene
             Color.White
         );
 
+        // Draw additional help text
+        string helpText = "Place all your Pokemon in Column 1 before starting the battle";
+        Vector2 helpSize = _font.MeasureString(helpText);
+        spriteBatch.DrawString(
+            _font,
+            helpText,
+            new Vector2(centerX - helpSize.X / 2, Settings.WINDOW_HEIGHT - 70),
+            Color.LightGray
+        );
+
         // Draw positioning status
         int positioned = _playerPositions.Count(p => p != null);
         string status = $"Positioned: {positioned}/{_player.Monsters.Count}";
+        Color statusColor = positioned == _player.Monsters.Count ? Color.LightGreen : Color.Cyan;
         spriteBatch.DrawString(
             _font,
             status,
             new Vector2(50, Settings.WINDOW_HEIGHT - 80),
-            Color.Cyan
+            statusColor
         );
     }
 

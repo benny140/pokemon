@@ -176,7 +176,7 @@ public class Game1 : Game
 
         // Load NPCs from Entities layer
         _characterManager = new CharacterManager();
-        _characterManager.LoadCharacters(_tiledMap, Content);
+        _characterManager.LoadCharacters(_tiledMap, Content, _collisionManager);
 
         _currentMapName = mapName;
     }
