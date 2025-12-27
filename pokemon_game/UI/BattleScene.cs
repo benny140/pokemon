@@ -33,14 +33,7 @@ public class BattleScene
         Fighting,
     }
 
-    private enum PlacementStep
-    {
-        SelectingPokemon,
-        SelectingRow,
-    }
-
     private BattlePhase _currentPhase;
-    private PlacementStep _placementStep;
     private int _selectedMonsterIndex;
     private int _selectedRow;
     private List<int?> _playerPositions; // Row index for each monster (0-6), null if not placed
@@ -110,7 +103,6 @@ public class BattleScene
             _currentBackground = _backgroundTextures[opponent.TrainerData.Biome];
         }
         _currentPhase = BattlePhase.Positioning;
-        _placementStep = PlacementStep.SelectingPokemon;
         _selectedMonsterIndex = 0;
         _selectedRow = 0;
 
