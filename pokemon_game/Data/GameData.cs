@@ -722,261 +722,127 @@ public static class GameData
         {
             "Bulbasaur",
             new MonsterData(
-                new MonsterStats("plant", 20, 22, 5, 10, 6, 1.2f),
-                new Dictionary<int, string>
-                {
-                    { 0, "scratch" },
-                    { 5, "spark" },
-                    { 10, "heal" },
-                },
-                ("Ivysaur", 16)
+                1,
+                "Grass",
+                "Base",
+                new MonsterStats(7, 2, 3, 3),
+                new SecondaryAction(
+                    "Leech Seed",
+                    "Target takes 1 damage at the start of its next turn. Bulbasaur heals 1 HP.",
+                    3
+                ),
+                2
             )
         },
         {
             "Ivysaur",
             new MonsterData(
-                new MonsterStats("plant", 28, 26, 6, 12, 8, 1.4f),
-                new Dictionary<int, string>
-                {
-                    { 0, "scratch" },
-                    { 5, "spark" },
-                    { 10, "heal" },
-                },
-                ("Venusaur", 32)
+                2,
+                "Grass",
+                "Stage1",
+                new MonsterStats(8, 3, 3, 3),
+                new SecondaryAction(
+                    "Vine Grab",
+                    "Deal 1 damage and pull the target 1 tile closer.",
+                    3
+                ),
+                3
             )
         },
         {
             "Venusaur",
             new MonsterData(
-                new MonsterStats("plant", 35, 32, 8, 15, 10, 1.6f),
-                new Dictionary<int, string>
-                {
-                    { 0, "scratch" },
-                    { 5, "spark" },
-                    { 10, "heal" },
-                },
+                3,
+                "Grass",
+                "Stage2",
+                new MonsterStats(10, 4, 3, 2),
+                new SecondaryAction(
+                    "Growth",
+                    "Heal 2 HP and gain +1 attack until end of next turn.",
+                    0
+                ),
                 null
             )
         },
         {
             "Charmander",
             new MonsterData(
-                new MonsterStats("fire", 18, 24, 6, 8, 5, 1.3f),
-                new Dictionary<int, string>
-                {
-                    { 0, "scratch" },
-                    { 5, "spark" },
-                    { 10, "fire" },
-                },
-                ("Charmeleon", 16)
+                4,
+                "Fire",
+                "Base",
+                new MonsterStats(6, 3, 3, 3),
+                new SecondaryAction(
+                    "Ember Mark",
+                    "Deal 1 damage. Target takes +1 damage from the next attack this round.",
+                    3
+                ),
+                5
             )
         },
         {
             "Charmeleon",
             new MonsterData(
-                new MonsterStats("fire", 26, 28, 8, 10, 7, 1.5f),
-                new Dictionary<int, string>
-                {
-                    { 0, "scratch" },
-                    { 5, "spark" },
-                    { 10, "fire" },
-                },
-                ("Charizard", 36)
+                5,
+                "Fire",
+                "Stage1",
+                new MonsterStats(8, 3, 3, 3),
+                new SecondaryAction(
+                    "Flame Dash",
+                    "Move up to 2 tiles, then deal 2 damage to a Pokémon in range.",
+                    3
+                ),
+                6
             )
         },
         {
             "Charizard",
             new MonsterData(
-                new MonsterStats("fire", 34, 34, 10, 12, 9, 1.8f),
-                new Dictionary<int, string>
-                {
-                    { 0, "scratch" },
-                    { 5, "spark" },
-                    { 10, "fire" },
-                    { 20, "explosion" },
-                },
+                6,
+                "Fire",
+                "Stage2",
+                new MonsterStats(9, 4, 4, 4),
+                new SecondaryAction("Fire Sweep", "Deal 2 damage to up to 2 Pokémon in range.", 4),
                 null
             )
         },
         {
             "Squirtle",
             new MonsterData(
-                new MonsterStats("water", 19, 22, 5, 12, 6, 1.1f),
-                new Dictionary<int, string>
-                {
-                    { 0, "scratch" },
-                    { 5, "spark" },
-                    { 10, "splash" },
-                },
-                ("Wartortle", 16)
+                7,
+                "Water",
+                "Base",
+                new MonsterStats(8, 2, 3, 2),
+                new SecondaryAction("Withdraw", "Reduce all damage taken by 2 until next turn.", 0),
+                8
             )
         },
         {
             "Wartortle",
             new MonsterData(
-                new MonsterStats("water", 27, 26, 6, 14, 8, 1.3f),
-                new Dictionary<int, string>
-                {
-                    { 0, "scratch" },
-                    { 5, "spark" },
-                    { 10, "splash" },
-                },
-                ("Blastoise", 36)
+                8,
+                "Water",
+                "Stage1",
+                new MonsterStats(9, 3, 3, 3),
+                new SecondaryAction(
+                    "Water Push",
+                    "Deal 1 damage and push the target 1 tile away.",
+                    3
+                ),
+                9
             )
         },
         {
             "Blastoise",
             new MonsterData(
-                new MonsterStats("water", 36, 30, 8, 16, 10, 1.5f),
-                new Dictionary<int, string>
-                {
-                    { 0, "scratch" },
-                    { 5, "spark" },
-                    { 10, "splash" },
-                    { 20, "ice" },
-                },
-                null
-            )
-        },
-        {
-            "Plumette",
-            new MonsterData(
-                new MonsterStats("plant", 15, 17, 4, 8, 5, 1f),
-                new Dictionary<int, string> { { 0, "scratch" }, { 5, "spark" } },
-                ("Ivieron", 15)
-            )
-        },
-        {
-            "Ivieron",
-            new MonsterData(
-                new MonsterStats("plant", 18, 20, 5, 10, 6, 1.2f),
-                new Dictionary<int, string> { { 0, "scratch" }, { 5, "spark" } },
-                ("Pluma", 32)
-            )
-        },
-        {
-            "Pluma",
-            new MonsterData(
-                new MonsterStats("plant", 23, 25, 6, 12, 7, 1.8f),
-                new Dictionary<int, string> { { 0, "scratch" }, { 5, "spark" } },
-                null
-            )
-        },
-        {
-            "Sparchu",
-            new MonsterData(
-                new MonsterStats("fire", 15, 17, 3, 8, 5, 1f),
-                new Dictionary<int, string> { { 0, "scratch" }, { 5, "spark" } },
-                ("Cindrill", 15)
-            )
-        },
-        {
-            "Cindrill",
-            new MonsterData(
-                new MonsterStats("fire", 18, 20, 4, 10, 6, 1.2f),
-                new Dictionary<int, string> { { 0, "scratch" }, { 5, "spark" } },
-                ("Charmadillo", 33)
-            )
-        },
-        {
-            "Charmadillo",
-            new MonsterData(
-                new MonsterStats("fire", 27, 23, 6, 17, 7, 1.5f),
-                new Dictionary<int, string>
-                {
-                    { 0, "scratch" },
-                    { 5, "fire" },
-                    { 10, "explosion" },
-                    { 12, "battlecry" },
-                    { 20, "annihilate" },
-                },
-                null
-            )
-        },
-        {
-            "Finsta",
-            new MonsterData(
-                new MonsterStats("water", 13, 17, 2, 8, 5, 1.8f),
-                new Dictionary<int, string> { { 0, "scratch" }, { 5, "spark" } },
-                ("Gulfin", 34)
-            )
-        },
-        {
-            "Gulfin",
-            new MonsterData(
-                new MonsterStats("water", 18, 20, 3, 10, 6, 2f),
-                new Dictionary<int, string> { { 0, "scratch" }, { 5, "spark" } },
-                ("Finiette", 32)
-            )
-        },
-        {
-            "Finiette",
-            new MonsterData(
-                new MonsterStats("water", 27, 23, 4, 17, 7, 2.5f),
-                new Dictionary<int, string> { { 0, "scratch" }, { 5, "spark" } },
-                null
-            )
-        },
-        {
-            "Atrox",
-            new MonsterData(
-                new MonsterStats("fire", 18, 20, 3, 10, 6, 1.9f),
-                new Dictionary<int, string> { { 0, "scratch" }, { 5, "spark" } },
-                null
-            )
-        },
-        {
-            "Pouch",
-            new MonsterData(
-                new MonsterStats("plant", 23, 25, 4, 12, 7, 1.5f),
-                new Dictionary<int, string> { { 0, "scratch" }, { 5, "spark" } },
-                null
-            )
-        },
-        {
-            "Draem",
-            new MonsterData(
-                new MonsterStats("plant", 23, 25, 4, 12, 7, 1.4f),
-                new Dictionary<int, string> { { 0, "scratch" }, { 5, "spark" } },
-                null
-            )
-        },
-        {
-            "Larvea",
-            new MonsterData(
-                new MonsterStats("plant", 15, 17, 1, 8, 5, 1f),
-                new Dictionary<int, string> { { 0, "scratch" }, { 5, "spark" } },
-                ("Cleaf", 4)
-            )
-        },
-        {
-            "Cleaf",
-            new MonsterData(
-                new MonsterStats("plant", 18, 20, 3, 10, 6, 1.6f),
-                new Dictionary<int, string> { { 0, "scratch" }, { 5, "spark" } },
-                null
-            )
-        },
-        {
-            "Jacana",
-            new MonsterData(
-                new MonsterStats("fire", 12, 19, 3, 10, 6, 2.6f),
-                new Dictionary<int, string> { { 0, "scratch" }, { 5, "spark" } },
-                null
-            )
-        },
-        {
-            "Friolera",
-            new MonsterData(
-                new MonsterStats("water", 27, 23, 4, 17, 7, 2f),
-                new Dictionary<int, string>
-                {
-                    { 0, "scratch" },
-                    { 5, "spark" },
-                    { 15, "splash" },
-                    { 20, "ice" },
-                    { 25, "heal" },
-                },
+                9,
+                "Water",
+                "Stage2",
+                new MonsterStats(10, 4, 4, 2),
+                new SecondaryAction(
+                    "Hydro Barrage",
+                    "Cannot move this turn. Deal 3 damage to all Pokémon within range 2.",
+                    0
+                ),
                 null
             )
         },

@@ -25,6 +25,7 @@ public class NPC : Character
     public string CharacterId => _characterId;
     public bool HasTriggered => _hasTriggered;
     public bool IsApproaching => _isApproaching;
+    public TrainerData TrainerData => _trainerData;
 
     public static void SetNoticeIcon(Texture2D texture)
     {

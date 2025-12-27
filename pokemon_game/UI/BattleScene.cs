@@ -1,6 +1,8 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -19,7 +21,11 @@ public class BattleScene
     private Player _player;
     private NPC _opponent;
     private bool _battleActive;
+    private Texture2D _currentBackground;
+    private Dictionary<string, Texture2D> _backgroundTextures;
     private KeyboardState _previousKeyboardState;
+    private SoundEffect _battleMusic;
+    private SoundEffectInstance _battleMusicInstance;
 
     private enum BattlePhase
     {
@@ -27,8 +33,16 @@ public class BattleScene
         Fighting,
     }
 
+    private enum PlacementStep
+    {
+        SelectingPokemon,
+        SelectingRow
+    }
+
     private BattlePhase _currentPhase;
+    private PlacementStep _placementStep;
     private int _selectedMonsterIndex;
+    private int _selectedRow;
     private List<int?> _playerPositions; // Row index for each monster (0-6), null if not placed
     private Dictionary<string, Texture2D> _pokemonTextures;
     private ContentManager _content;
@@ -41,21 +55,71 @@ public class BattleScene
         _font = font;
         _content = content;
         _pokemonTextures = new Dictionary<string, Texture2D>();
+        _backgroundTextures = new Dictionary<string, Texture2D>();
 
         // Create a 1x1 white pixel texture for drawing rectangles
         _pixelTexture = new Texture2D(graphicsDevice, 1, 1);
         _pixelTexture.SetData(new[] { Color.White });
 
+        // Load background textures
+        LoadBackgroundTextures();
+
+        // Load battle music
+        try
+        {
+            _battleMusic = content.Load<SoundEffect>("audio/battle");
+        }
+        catch
+        {
+            // Battle music not found
+        }
+
         _previousKeyboardState = Keyboard.GetState();
+    }
+
+    private void LoadBackgroundTextures()
+    {
+        string[] biomes = { "forest", "ice", "sand" };
+        foreach (var biome in biomes)
+        {
+            try
+            {
+                _backgroundTextures[biome] = _content.Load<Texture2D>(
+                    $"graphics/backgrounds/{biome}"
+                );
+            }
+            catch
+            {
+                // Background texture not found
+            }
+        }
     }
 
     public void StartBattle(Player player, NPC opponent)
     {
         _player = player;
         _opponent = opponent;
+
+        // Set background based on opponent's biome
+        _currentBackground = null;
+        if (
+            opponent?.TrainerData?.Biome != null
+            && _backgroundTextures.ContainsKey(opponent.TrainerData.Biome)
+        )
+        {
+            _currentBackground = _backgroundTextures[opponent.TrainerData.Biome];
+        }
         _currentPhase = BattlePhase.Positioning;
+        _placementStep = PlacementStep.SelectingPokemon;
         _selectedMonsterIndex = 0;
-        _playerPositions = new List<int?> { null, null, null }; // Initialize with 3 positions
+        _selectedRow = 0;
+        
+        // Auto-place Pokemon initially in sequential rows
+        _playerPositions = new List<int?>();
+        for (int i = 0; i < _player.Monsters.Count && i < BOARD_SIZE; i++)
+        {
+            _playerPositions.Add(i); // Place in rows 0, 1, 2, etc.
+        }
 
         // Load pokemon textures
         _pokemonTextures.Clear();
@@ -78,6 +142,18 @@ public class BattleScene
         }
         _battleActive = true;
         IsBattleWon = false;
+
+        // Start battle music (looped)
+        if (_battleMusic != null)
+        {
+            _battleMusicInstance?.Stop();
+            _battleMusicInstance = _battleMusic.CreateInstance();
+            _battleMusicInstance.IsLooped = true;
+            _battleMusicInstance.Play();
+        }
+        
+        // Initialize keyboard state to prevent immediate transitions
+        _previousKeyboardState = Keyboard.GetState();
     }
 
     public void Update(GameTime gameTime)
@@ -89,9 +165,7 @@ public class BattleScene
 
         if (_currentPhase == BattlePhase.Positioning)
         {
-            // Handle positioning phase input
-
-            // Navigate between monsters
+            // Navigate between Pokemon with Left/Right
             if (keyboardState.IsKeyDown(Keys.Left) && _previousKeyboardState.IsKeyUp(Keys.Left))
             {
                 _selectedMonsterIndex =
@@ -102,33 +176,54 @@ public class BattleScene
                 _selectedMonsterIndex = (_selectedMonsterIndex + 1) % _player.Monsters.Count;
             }
 
-            // Navigate row position for selected monster
+            // Number keys 1-3 for quick Pokemon selection
+            if (keyboardState.IsKeyDown(Keys.D1) && _previousKeyboardState.IsKeyUp(Keys.D1) && _player.Monsters.Count >= 1)
+                _selectedMonsterIndex = 0;
+            if (keyboardState.IsKeyDown(Keys.D2) && _previousKeyboardState.IsKeyUp(Keys.D2) && _player.Monsters.Count >= 2)
+                _selectedMonsterIndex = 1;
+            if (keyboardState.IsKeyDown(Keys.D3) && _previousKeyboardState.IsKeyUp(Keys.D3) && _player.Monsters.Count >= 3)
+                _selectedMonsterIndex = 2;
+
+            // Move selected Pokemon up/down rows
             if (keyboardState.IsKeyDown(Keys.Up) && _previousKeyboardState.IsKeyUp(Keys.Up))
             {
-                if (_playerPositions[_selectedMonsterIndex] == null)
-                    _playerPositions[_selectedMonsterIndex] = 0;
-                else
-                    _playerPositions[_selectedMonsterIndex] =
-                        (_playerPositions[_selectedMonsterIndex].Value - 1 + BOARD_SIZE)
-                        % BOARD_SIZE;
+                if (_playerPositions[_selectedMonsterIndex] != null)
+                {
+                    int newRow = (_playerPositions[_selectedMonsterIndex].Value - 1 + BOARD_SIZE) % BOARD_SIZE;
+                    _playerPositions[_selectedMonsterIndex] = newRow;
+                }
             }
             if (keyboardState.IsKeyDown(Keys.Down) && _previousKeyboardState.IsKeyUp(Keys.Down))
             {
-                if (_playerPositions[_selectedMonsterIndex] == null)
-                    _playerPositions[_selectedMonsterIndex] = 0;
-                else
-                    _playerPositions[_selectedMonsterIndex] =
-                        (_playerPositions[_selectedMonsterIndex].Value + 1) % BOARD_SIZE;
+                if (_playerPositions[_selectedMonsterIndex] != null)
+                {
+                    int newRow = (_playerPositions[_selectedMonsterIndex].Value + 1) % BOARD_SIZE;
+                    _playerPositions[_selectedMonsterIndex] = newRow;
+                }
             }
 
-            // Confirm positioning and start battle
-            if (keyboardState.IsKeyDown(Keys.Enter) && _previousKeyboardState.IsKeyUp(Keys.Enter))
+            // Start battle with Enter or Space (only if no collisions)
+            if ((keyboardState.IsKeyDown(Keys.Enter) && _previousKeyboardState.IsKeyUp(Keys.Enter)) ||
+                (keyboardState.IsKeyDown(Keys.Space) && _previousKeyboardState.IsKeyUp(Keys.Space)))
             {
-                // Check if all monsters are positioned
-                if (_playerPositions.All(p => p != null))
+                // Check for collisions before starting
+                bool hasCollision = false;
+                for (int i = 0; i < _playerPositions.Count; i++)
                 {
-                    _currentPhase = BattlePhase.Fighting;
+                    for (int j = i + 1; j < _playerPositions.Count; j++)
+                    {
+                        if (_playerPositions[i] == _playerPositions[j])
+                        {
+                            hasCollision = true;
+                            break;
+                        }
+                    }
+                    if (hasCollision) break;
                 }
+                
+                // Only start if no collisions
+                if (!hasCollision)
+                    _currentPhase = BattlePhase.Fighting;
             }
         }
         else if (_currentPhase == BattlePhase.Fighting)
@@ -138,23 +233,35 @@ public class BattleScene
             {
                 IsBattleWon = true;
                 _battleActive = false;
+                _battleMusicInstance?.Stop();
             }
         }
 
         _previousKeyboardState = keyboardState;
     }
 
-    public void Draw(SpriteBatch spriteBatch)
+    public void Draw(SpriteBatch spriteBatch, GameTime gameTime)
     {
         if (!_battleActive)
             return;
 
-        // Draw semi-transparent background
-        spriteBatch.Draw(
-            _pixelTexture,
-            new Rectangle(0, 0, Settings.WINDOW_WIDTH, Settings.WINDOW_HEIGHT),
-            Color.Black * 0.7f
-        );
+        // Draw biome background or fallback to semi-transparent overlay
+        if (_currentBackground != null)
+        {
+            spriteBatch.Draw(
+                _currentBackground,
+                new Rectangle(0, 0, Settings.WINDOW_WIDTH, Settings.WINDOW_HEIGHT),
+                Color.White
+            );
+        }
+        else
+        {
+            spriteBatch.Draw(
+                _pixelTexture,
+                new Rectangle(0, 0, Settings.WINDOW_WIDTH, Settings.WINDOW_HEIGHT),
+                Color.Black * 0.7f
+            );
+        }
 
         int totalBoardSize = BOARD_SIZE * CELL_SIZE;
         int centerX = Settings.WINDOW_WIDTH / 2;
@@ -167,7 +274,7 @@ public class BattleScene
 
         if (_currentPhase == BattlePhase.Positioning)
         {
-            DrawPositioningPhase(spriteBatch, boardX, boardY, centerX);
+            DrawPositioningPhase(spriteBatch, boardX, boardY, centerX, gameTime);
         }
         else
         {
@@ -212,8 +319,8 @@ public class BattleScene
             // Draw instructions at the bottom
             string instructions = "Battle in Progress - Press F9 to win (placeholder for testing)";
             Vector2 instructionsSize = _font.MeasureString(instructions);
-            spriteBatch.DrawString(
-                _font,
+            DrawTextWithBackground(
+                spriteBatch,
                 instructions,
                 new Vector2(centerX - instructionsSize.X / 2, Settings.WINDOW_HEIGHT - 40),
                 Color.Yellow
@@ -221,26 +328,28 @@ public class BattleScene
         }
     }
 
-    private void DrawPositioningPhase(SpriteBatch spriteBatch, int boardX, int boardY, int centerX)
+    private void DrawPositioningPhase(SpriteBatch spriteBatch, int boardX, int boardY, int centerX, GameTime gameTime)
     {
         // Draw title
         string title = "SETUP PHASE: Position Your Pokemon";
         Vector2 titleSize = _font.MeasureString(title);
-        spriteBatch.DrawString(
-            _font,
+        DrawTextWithBackground(
+            spriteBatch,
             title,
             new Vector2(centerX - titleSize.X / 2, 40),
             Color.Yellow
         );
 
-        // Draw subtitle with clearer instructions
-        string subtitle = "Place each Pokemon in a row of Column 1";
+        // Draw instructions
+        string subtitle = "Select a Pokemon and use UP/DOWN to reposition";
+        Color subtitleColor = Color.Cyan;
+        
         Vector2 subtitleSize = _font.MeasureString(subtitle);
-        spriteBatch.DrawString(
-            _font,
+        DrawTextWithBackground(
+            spriteBatch,
             subtitle,
             new Vector2(centerX - subtitleSize.X / 2, 70),
-            Color.White
+            subtitleColor
         );
 
         // Draw the board
@@ -252,18 +361,21 @@ public class BattleScene
         {
             var monster = _player.Monsters[i];
             bool isSelected = i == _selectedMonsterIndex;
+            bool isPlaced = _playerPositions[i] != null;
+            
             Color textColor = isSelected ? Color.Yellow : Color.White;
 
             int yPos = startY + i * 80;
 
-            // Draw monster name
-            string monsterText = $"{i + 1}. {monster.Name} (Lv.{monster.Level})";
-            spriteBatch.DrawString(_font, monsterText, new Vector2(50, yPos), textColor);
+            // Draw monster name with visual indicator
+            string indicator = isSelected ? ">>>" : "   ";
+            
+            string monsterText = $"{indicator} {i + 1}. {monster.Name} (Lv.{monster.Level})";
+            DrawTextWithBackground(spriteBatch, monsterText, new Vector2(50, yPos), textColor);
 
             // Draw position indicator
-            string posText =
-                _playerPositions[i] == null ? "Not placed" : $"Row {_playerPositions[i].Value + 1}";
-            spriteBatch.DrawString(_font, posText, new Vector2(50, yPos + 25), textColor);
+            string posText = $"Row {_playerPositions[i].Value + 1}";
+            DrawTextWithBackground(spriteBatch, posText, new Vector2(50, yPos + 25), textColor);
 
             // Draw Pokemon sprite if available
             string textureName = monster.Name.ToLower();
@@ -282,21 +394,40 @@ public class BattleScene
                 );
             }
 
-            // Draw on board if positioned
+            // Draw Pokemon on board
             if (_playerPositions[i] != null)
             {
                 int row = _playerPositions[i].Value;
                 int cellX = boardX + 2; // Column 0 + border
                 int cellY = boardY + row * CELL_SIZE + 2;
 
-                // Highlight the cell
+                // Check if another Pokemon is in the same row (collision)
+                bool hasCollision = false;
+                for (int j = 0; j < _playerPositions.Count; j++)
+                {
+                    if (j != i && _playerPositions[j] == row)
+                    {
+                        hasCollision = true;
+                        break;
+                    }
+                }
+
+                // Highlight the cell - brighter if selected, red if collision
+                Color highlightColor;
+                if (hasCollision)
+                    highlightColor = Color.Red * 0.5f; // Red for collision
+                else if (isSelected)
+                    highlightColor = Color.Yellow * 0.6f; // Yellow for selected
+                else
+                    highlightColor = Color.LightGreen * 0.4f; // Green for normal
+                    
                 spriteBatch.Draw(
                     _pixelTexture,
                     new Rectangle(cellX, cellY, CELL_SIZE - 4, CELL_SIZE - 4),
-                    Color.LightGreen * 0.5f
+                    highlightColor
                 );
 
-                // Draw Pokemon on board
+                // Draw Pokemon on board with shake effect if collision
                 if (_pokemonTextures.ContainsKey(textureName))
                 {
                     var pokemonTexture = _pokemonTextures[textureName];
@@ -304,9 +435,20 @@ public class BattleScene
                     if (scale > 1f)
                         scale = 1f;
 
+                    // Add shake offset if there's a collision
+                    int shakeOffsetX = 0;
+                    int shakeOffsetY = 0;
+                    if (hasCollision)
+                    {
+                        // Simple shake based on which Pokemon index is higher
+                        int shakeAmount = 5;
+                        shakeOffsetX = i % 2 == 0 ? shakeAmount : -shakeAmount;
+                        shakeOffsetY = (int)(Math.Sin(gameTime.TotalGameTime.TotalSeconds * 10) * shakeAmount);
+                    }
+
                     spriteBatch.Draw(
                         pokemonTexture,
-                        new Vector2(cellX + CELL_SIZE / 2, cellY + CELL_SIZE / 2),
+                        new Vector2(cellX + CELL_SIZE / 2 + shakeOffsetX, cellY + CELL_SIZE / 2 + shakeOffsetY),
                         null,
                         Color.White,
                         0f,
@@ -320,35 +462,34 @@ public class BattleScene
         }
 
         // Draw instructions
-        string instructions =
-            "LEFT/RIGHT: Select Pokemon | UP/DOWN: Choose Row | ENTER: Start Battle";
+        string instructions = "LEFT/RIGHT or 1-3: Select Pokemon | UP/DOWN: Move Row | ENTER/SPACE: Start Battle";
+        
+        // Check for collisions
+        bool hasAnyCollision = false;
+        for (int i = 0; i < _playerPositions.Count; i++)
+        {
+            for (int j = i + 1; j < _playerPositions.Count; j++)
+            {
+                if (_playerPositions[i] == _playerPositions[j])
+                {
+                    hasAnyCollision = true;
+                    break;
+                }
+            }
+            if (hasAnyCollision) break;
+        }
+        
+        if (hasAnyCollision)
+            instructions = "WARNING: Pokemon overlapping! Reposition before starting battle!";
+        
         Vector2 instrSize = _font.MeasureString(instructions);
-        spriteBatch.DrawString(
-            _font,
+        Color instrColor = hasAnyCollision ? Color.Red : Color.LightGreen;
+        
+        DrawTextWithBackground(
+            spriteBatch,
             instructions,
             new Vector2(centerX - instrSize.X / 2, Settings.WINDOW_HEIGHT - 40),
-            Color.White
-        );
-
-        // Draw additional help text
-        string helpText = "Place all your Pokemon in Column 1 before starting the battle";
-        Vector2 helpSize = _font.MeasureString(helpText);
-        spriteBatch.DrawString(
-            _font,
-            helpText,
-            new Vector2(centerX - helpSize.X / 2, Settings.WINDOW_HEIGHT - 70),
-            Color.LightGray
-        );
-
-        // Draw positioning status
-        int positioned = _playerPositions.Count(p => p != null);
-        string status = $"Positioned: {positioned}/{_player.Monsters.Count}";
-        Color statusColor = positioned == _player.Monsters.Count ? Color.LightGreen : Color.Cyan;
-        spriteBatch.DrawString(
-            _font,
-            status,
-            new Vector2(50, Settings.WINDOW_HEIGHT - 80),
-            statusColor
+            instrColor
         );
     }
 
@@ -388,10 +529,36 @@ public class BattleScene
         }
     }
 
+    private void DrawTextWithBackground(
+        SpriteBatch spriteBatch,
+        string text,
+        Vector2 position,
+        Color textColor
+    )
+    {
+        Vector2 size = _font.MeasureString(text);
+        int padding = 10;
+
+        // Draw semi-transparent background
+        spriteBatch.Draw(
+            _pixelTexture,
+            new Rectangle(
+                (int)position.X - padding,
+                (int)position.Y - padding,
+                (int)size.X + padding * 2,
+                (int)size.Y + padding * 2
+            ),
+            Color.Black * 0.7f
+        );
+
+        // Draw text
+        spriteBatch.DrawString(_font, text, position, textColor);
+    }
+
     private void DrawCharacterInfo(SpriteBatch spriteBatch, string name, int x, int y, Color color)
     {
-        // Draw character name
-        spriteBatch.DrawString(_font, name, new Vector2(x, y), color);
+        // Draw character name with background
+        DrawTextWithBackground(spriteBatch, name, new Vector2(x, y), color);
     }
 
     private void DrawBoard(SpriteBatch spriteBatch, int boardX, int boardY)
@@ -493,6 +660,7 @@ public class BattleScene
     public void EndBattle()
     {
         _battleActive = false;
+        _battleMusicInstance?.Stop();
         _player = null;
         _opponent = null;
     }

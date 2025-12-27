@@ -4,14 +4,14 @@
   <Platform>DesktopGL</Platform>
   <Config />
   <SourceFiles>
-    <File>c:/Users/benja/Projects/pokemon/pokemon_game/Content/audio/battle.ogg</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/Content/audio/battle.wav</File>
     <File>c:/Users/benja/Projects/pokemon/pokemon_game/Content/audio/evolution.mp3</File>
     <File>c:/Users/benja/Projects/pokemon/pokemon_game/Content/audio/explosion.wav</File>
     <File>c:/Users/benja/Projects/pokemon/pokemon_game/Content/audio/fire.wav</File>
     <File>c:/Users/benja/Projects/pokemon/pokemon_game/Content/audio/green.wav</File>
     <File>c:/Users/benja/Projects/pokemon/pokemon_game/Content/audio/ice.mp3</File>
     <File>c:/Users/benja/Projects/pokemon/pokemon_game/Content/audio/notice.wav</File>
-    <File>c:/Users/benja/Projects/pokemon/pokemon_game/Content/audio/overworld.ogg</File>
+    <File>c:/Users/benja/Projects/pokemon/pokemon_game/Content/audio/overworld.wav</File>
     <File>c:/Users/benja/Projects/pokemon/pokemon_game/Content/audio/scratch.mp3</File>
     <File>c:/Users/benja/Projects/pokemon/pokemon_game/Content/audio/splash.wav</File>
     <File>c:/Users/benja/Projects/pokemon/pokemon_game/Content/Consolas.spritefont</File>

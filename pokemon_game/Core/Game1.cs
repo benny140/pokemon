@@ -37,6 +37,8 @@ public class Game1 : Game
     private string _currentMapName;
     private string _previousMapName;
     private string _pendingMapTransition;
+    private SoundEffect _overworldMusic;
+    private SoundEffectInstance _overworldMusicInstance;
 
     private enum TransitionState
     {
@@ -100,6 +102,20 @@ public class Game1 : Game
 
         var noticeSound = Content.Load<SoundEffect>("audio/notice");
         CharacterManager.SetNoticeSound(noticeSound);
+
+        // Load and play overworld music
+        try
+        {
+            _overworldMusic = Content.Load<SoundEffect>("audio/overworld");
+            _overworldMusicInstance = _overworldMusic.CreateInstance();
+            _overworldMusicInstance.IsLooped = true;
+            _overworldMusicInstance.Play();
+            CharacterManager.SetOverworldMusic(_overworldMusicInstance);
+        }
+        catch
+        {
+            // Overworld music not found
+        }
     }
 
     private void LoadMap(string mapName)
@@ -276,6 +292,8 @@ public class Game1 : Game
                     _battleScene.EndBattle();
                     _characterManager.EndBattle();
                     _gameState = GameState.Exploration;
+                    // Resume overworld music after battle
+                    _overworldMusicInstance?.Resume();
                 }
             }
             else if (_gameState == GameState.Exploration)
@@ -287,7 +305,19 @@ public class Game1 : Game
                 if (_characterManager.ShouldStartBattle())
                 {
                     _gameState = GameState.Battle;
+                    // Pause overworld music during battle
+                    _overworldMusicInstance?.Pause();
                     _battleScene.StartBattle(_player, _characterManager.ActiveNPC);
+                }
+                // Check if dialog finished without battle (like Nurse)
+                else if (
+                    _characterManager.ActiveNPC != null
+                    && !_characterManager.HasActiveDialog()
+                    && _characterManager.ActiveNPC.TrainerData != null
+                    && !_characterManager.ActiveNPC.TrainerData.CanBattle
+                )
+                {
+                    _characterManager.EndDialog();
                 }
 
                 // Update player with blocking state
@@ -346,7 +376,7 @@ public class Game1 : Game
         {
             // Draw battle scene
             _spriteBatch.Begin(samplerState: SamplerState.PointClamp);
-            _battleScene.Draw(_spriteBatch);
+            _battleScene.Draw(_spriteBatch, gameTime);
             _spriteBatch.End();
         }
         else

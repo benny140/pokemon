@@ -19,10 +19,16 @@ public class CharacterManager
     private int _currentDialogIndex;
     private bool _dialogComplete;
     private static SoundEffect _noticeSound;
+    private static SoundEffectInstance _overworldMusic;
 
     public static void SetNoticeSound(SoundEffect sound)
     {
         _noticeSound = sound;
+    }
+
+    public static void SetOverworldMusic(SoundEffectInstance music)
+    {
+        _overworldMusic = music;
     }
 
     public bool IsPlayerBlocked => _isPlayerBlocked;
@@ -115,8 +121,9 @@ public class CharacterManager
                     _activeNPC.StartApproaching(playerPosition);
                     _isPlayerBlocked = true;
 
-                    // Play notice sound
+                    // Play notice sound and stop overworld music
                     _noticeSound?.Play();
+                    _overworldMusic?.Pause();
 
                     break;
                 }
@@ -147,6 +154,7 @@ public class CharacterManager
             _currentDialogIndex = 0;
             _dialogComplete = true;
             // Keep _isPlayerBlocked true and _activeNPC set for battle transition
+            // Note: Don't resume music here - it will either go to battle or resume in EndDialog
         }
     }
 
@@ -169,8 +177,12 @@ public class CharacterManager
 
     public bool ShouldStartBattle()
     {
-        // Start battle after dialog completes
-        return _activeNPC != null && _dialogComplete;
+        // Start battle after dialog completes, but only if NPC can battle
+        // NPCs with null biome (like Nurses) don't battle
+        return _activeNPC != null
+            && _dialogComplete
+            && _activeNPC.TrainerData != null
+            && _activeNPC.TrainerData.CanBattle;
     }
 
     public void EndBattle()
@@ -185,6 +197,18 @@ public class CharacterManager
         _currentDialogIndex = 0;
         _dialogComplete = false;
         _isPlayerBlocked = false;
+    }
+
+    public void EndDialog()
+    {
+        // End dialog for non-battle NPCs (like Nurse)
+        _activeNPC = null;
+        _currentDialog = null;
+        _currentDialogIndex = 0;
+        _dialogComplete = false;
+        _isPlayerBlocked = false;
+        // Resume overworld music after dialog
+        _overworldMusic?.Resume();
     }
 
     public void Draw(SpriteBatch spriteBatch)

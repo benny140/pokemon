@@ -234,7 +234,6 @@ C:\Users\benja\Projects\pokemon\pokemon_game\pokemon_game\obj\Debug\net8.0\refin
 C:\Users\benja\Projects\pokemon\pokemon_game\pokemon_game\obj\Debug\net8.0\pokemon_game.pdb
 C:\Users\benja\Projects\pokemon\pokemon_game\pokemon_game\obj\Debug\net8.0\pokemon_game.genruntimeconfig.cache
 C:\Users\benja\Projects\pokemon\pokemon_game\pokemon_game\obj\Debug\net8.0\ref\pokemon_game.dll
-C:\Users\benja\Projects\pokemon\pokemon_game\bin\Debug\net8.0\Content\audio\battle.ogg
 C:\Users\benja\Projects\pokemon\pokemon_game\bin\Debug\net8.0\Content\audio\battle.xnb
 C:\Users\benja\Projects\pokemon\pokemon_game\bin\Debug\net8.0\Content\audio\evolution.ogg
 C:\Users\benja\Projects\pokemon\pokemon_game\bin\Debug\net8.0\Content\audio\evolution.xnb
@@ -244,7 +243,6 @@ C:\Users\benja\Projects\pokemon\pokemon_game\bin\Debug\net8.0\Content\audio\gree
 C:\Users\benja\Projects\pokemon\pokemon_game\bin\Debug\net8.0\Content\audio\ice.ogg
 C:\Users\benja\Projects\pokemon\pokemon_game\bin\Debug\net8.0\Content\audio\ice.xnb
 C:\Users\benja\Projects\pokemon\pokemon_game\bin\Debug\net8.0\Content\audio\notice.xnb
-C:\Users\benja\Projects\pokemon\pokemon_game\bin\Debug\net8.0\Content\audio\overworld.ogg
 C:\Users\benja\Projects\pokemon\pokemon_game\bin\Debug\net8.0\Content\audio\overworld.xnb
 C:\Users\benja\Projects\pokemon\pokemon_game\bin\Debug\net8.0\Content\audio\scratch.ogg
 C:\Users\benja\Projects\pokemon\pokemon_game\bin\Debug\net8.0\Content\audio\scratch.xnb

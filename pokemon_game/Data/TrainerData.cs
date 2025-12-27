@@ -10,6 +10,7 @@ public class TrainerData
     public bool LookAround { get; set; }
     public bool Defeated { get; set; }
     public string Biome { get; set; }
+    public bool CanBattle => Biome != null;
 
     public TrainerData(
         Dictionary<int, (string Name, int Level)> monsters,
