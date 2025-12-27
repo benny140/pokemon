@@ -36,7 +36,7 @@ public class BattleScene
     private enum PlacementStep
     {
         SelectingPokemon,
-        SelectingRow
+        SelectingRow,
     }
 
     private BattlePhase _currentPhase;
@@ -113,7 +113,7 @@ public class BattleScene
         _placementStep = PlacementStep.SelectingPokemon;
         _selectedMonsterIndex = 0;
         _selectedRow = 0;
-        
+
         // Auto-place Pokemon initially in sequential rows
         _playerPositions = new List<int?>();
         for (int i = 0; i < _player.Monsters.Count && i < BOARD_SIZE; i++)
@@ -151,7 +151,7 @@ public class BattleScene
             _battleMusicInstance.IsLooped = true;
             _battleMusicInstance.Play();
         }
-        
+
         // Initialize keyboard state to prevent immediate transitions
         _previousKeyboardState = Keyboard.GetState();
     }
@@ -177,11 +177,23 @@ public class BattleScene
             }
 
             // Number keys 1-3 for quick Pokemon selection
-            if (keyboardState.IsKeyDown(Keys.D1) && _previousKeyboardState.IsKeyUp(Keys.D1) && _player.Monsters.Count >= 1)
+            if (
+                keyboardState.IsKeyDown(Keys.D1)
+                && _previousKeyboardState.IsKeyUp(Keys.D1)
+                && _player.Monsters.Count >= 1
+            )
                 _selectedMonsterIndex = 0;
-            if (keyboardState.IsKeyDown(Keys.D2) && _previousKeyboardState.IsKeyUp(Keys.D2) && _player.Monsters.Count >= 2)
+            if (
+                keyboardState.IsKeyDown(Keys.D2)
+                && _previousKeyboardState.IsKeyUp(Keys.D2)
+                && _player.Monsters.Count >= 2
+            )
                 _selectedMonsterIndex = 1;
-            if (keyboardState.IsKeyDown(Keys.D3) && _previousKeyboardState.IsKeyUp(Keys.D3) && _player.Monsters.Count >= 3)
+            if (
+                keyboardState.IsKeyDown(Keys.D3)
+                && _previousKeyboardState.IsKeyUp(Keys.D3)
+                && _player.Monsters.Count >= 3
+            )
                 _selectedMonsterIndex = 2;
 
             // Move selected Pokemon up/down rows
@@ -189,7 +201,9 @@ public class BattleScene
             {
                 if (_playerPositions[_selectedMonsterIndex] != null)
                 {
-                    int newRow = (_playerPositions[_selectedMonsterIndex].Value - 1 + BOARD_SIZE) % BOARD_SIZE;
+                    int newRow =
+                        (_playerPositions[_selectedMonsterIndex].Value - 1 + BOARD_SIZE)
+                        % BOARD_SIZE;
                     _playerPositions[_selectedMonsterIndex] = newRow;
                 }
             }
@@ -203,8 +217,13 @@ public class BattleScene
             }
 
             // Start battle with Enter or Space (only if no collisions)
-            if ((keyboardState.IsKeyDown(Keys.Enter) && _previousKeyboardState.IsKeyUp(Keys.Enter)) ||
-                (keyboardState.IsKeyDown(Keys.Space) && _previousKeyboardState.IsKeyUp(Keys.Space)))
+            if (
+                (keyboardState.IsKeyDown(Keys.Enter) && _previousKeyboardState.IsKeyUp(Keys.Enter))
+                || (
+                    keyboardState.IsKeyDown(Keys.Space)
+                    && _previousKeyboardState.IsKeyUp(Keys.Space)
+                )
+            )
             {
                 // Check for collisions before starting
                 bool hasCollision = false;
@@ -218,9 +237,10 @@ public class BattleScene
                             break;
                         }
                     }
-                    if (hasCollision) break;
+                    if (hasCollision)
+                        break;
                 }
-                
+
                 // Only start if no collisions
                 if (!hasCollision)
                     _currentPhase = BattlePhase.Fighting;
@@ -328,7 +348,13 @@ public class BattleScene
         }
     }
 
-    private void DrawPositioningPhase(SpriteBatch spriteBatch, int boardX, int boardY, int centerX, GameTime gameTime)
+    private void DrawPositioningPhase(
+        SpriteBatch spriteBatch,
+        int boardX,
+        int boardY,
+        int centerX,
+        GameTime gameTime
+    )
     {
         // Draw title
         string title = "SETUP PHASE: Position Your Pokemon";
@@ -343,7 +369,7 @@ public class BattleScene
         // Draw instructions
         string subtitle = "Select a Pokemon and use UP/DOWN to reposition";
         Color subtitleColor = Color.Cyan;
-        
+
         Vector2 subtitleSize = _font.MeasureString(subtitle);
         DrawTextWithBackground(
             spriteBatch,
@@ -362,14 +388,14 @@ public class BattleScene
             var monster = _player.Monsters[i];
             bool isSelected = i == _selectedMonsterIndex;
             bool isPlaced = _playerPositions[i] != null;
-            
+
             Color textColor = isSelected ? Color.Yellow : Color.White;
 
             int yPos = startY + i * 80;
 
             // Draw monster name with visual indicator
             string indicator = isSelected ? ">>>" : "   ";
-            
+
             string monsterText = $"{indicator} {i + 1}. {monster.Name} (Lv.{monster.Level})";
             DrawTextWithBackground(spriteBatch, monsterText, new Vector2(50, yPos), textColor);
 
@@ -420,7 +446,7 @@ public class BattleScene
                     highlightColor = Color.Yellow * 0.6f; // Yellow for selected
                 else
                     highlightColor = Color.LightGreen * 0.4f; // Green for normal
-                    
+
                 spriteBatch.Draw(
                     _pixelTexture,
                     new Rectangle(cellX, cellY, CELL_SIZE - 4, CELL_SIZE - 4),
@@ -443,12 +469,17 @@ public class BattleScene
                         // Simple shake based on which Pokemon index is higher
                         int shakeAmount = 5;
                         shakeOffsetX = i % 2 == 0 ? shakeAmount : -shakeAmount;
-                        shakeOffsetY = (int)(Math.Sin(gameTime.TotalGameTime.TotalSeconds * 10) * shakeAmount);
+                        shakeOffsetY = (int)(
+                            Math.Sin(gameTime.TotalGameTime.TotalSeconds * 10) * shakeAmount
+                        );
                     }
 
                     spriteBatch.Draw(
                         pokemonTexture,
-                        new Vector2(cellX + CELL_SIZE / 2 + shakeOffsetX, cellY + CELL_SIZE / 2 + shakeOffsetY),
+                        new Vector2(
+                            cellX + CELL_SIZE / 2 + shakeOffsetX,
+                            cellY + CELL_SIZE / 2 + shakeOffsetY
+                        ),
                         null,
                         Color.White,
                         0f,
@@ -462,8 +493,9 @@ public class BattleScene
         }
 
         // Draw instructions
-        string instructions = "LEFT/RIGHT or 1-3: Select Pokemon | UP/DOWN: Move Row | ENTER/SPACE: Start Battle";
-        
+        string instructions =
+            "LEFT/RIGHT or 1-3: Select Pokemon | UP/DOWN: Move Row | ENTER/SPACE: Start Battle";
+
         // Check for collisions
         bool hasAnyCollision = false;
         for (int i = 0; i < _playerPositions.Count; i++)
@@ -476,15 +508,16 @@ public class BattleScene
                     break;
                 }
             }
-            if (hasAnyCollision) break;
+            if (hasAnyCollision)
+                break;
         }
-        
+
         if (hasAnyCollision)
             instructions = "WARNING: Pokemon overlapping! Reposition before starting battle!";
-        
+
         Vector2 instrSize = _font.MeasureString(instructions);
         Color instrColor = hasAnyCollision ? Color.Red : Color.LightGreen;
-        
+
         DrawTextWithBackground(
             spriteBatch,
             instructions,
