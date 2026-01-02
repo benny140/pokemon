@@ -7,6 +7,7 @@ using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using pokemon_game.Core;
+using pokemon_game.Data;
 using pokemon_game.Entities;
 
 namespace pokemon_game.UI;
@@ -33,12 +34,24 @@ public class BattleScene
         Fighting,
     }
 
+    private enum BattleAction
+    {
+        SelectingPokemon,
+        SelectingAction,
+        SelectingTarget,
+    }
+
     private BattlePhase _currentPhase;
     private int _selectedMonsterIndex;
     private int _selectedRow;
     private List<int?> _playerPositions; // Row index for each monster (0-6), null if not placed
     private Dictionary<string, Texture2D> _pokemonTextures;
     private ContentManager _content;
+
+    // Fighting phase state
+    private BattleAction _currentAction;
+    private int _fightingSelectedPokemon; // Index of selected pokemon during fighting
+    private int _selectedActionOption; // 0 = Move, 1 = Attack
 
     public bool IsBattleActive => _battleActive;
     public bool IsBattleWon { get; private set; }
@@ -113,11 +126,16 @@ public class BattleScene
             _playerPositions.Add(i); // Place in rows 0, 1, 2, etc.
         }
 
+        // Initialize fighting phase state
+        _currentAction = BattleAction.SelectingPokemon;
+        _fightingSelectedPokemon = -1;
+        _selectedActionOption = 0;
+
         // Load pokemon textures
         _pokemonTextures.Clear();
-        foreach (var monster in _player.Monsters)
+        foreach (var monsterName in _player.Monsters)
         {
-            string textureName = monster.Name.ToLower();
+            string textureName = monsterName.ToLower();
             try
             {
                 if (!_pokemonTextures.ContainsKey(textureName))
@@ -240,6 +258,241 @@ public class BattleScene
         }
         else if (_currentPhase == BattlePhase.Fighting)
         {
+            if (_currentAction == BattleAction.SelectingPokemon)
+            {
+                // Initialize selection if not set
+                if (_fightingSelectedPokemon == -1 && _player.Monsters.Count > 0)
+                {
+                    _fightingSelectedPokemon = 0;
+                }
+
+                // Navigate with Up/Down arrows through board rows
+                if (keyboardState.IsKeyDown(Keys.Up) && _previousKeyboardState.IsKeyUp(Keys.Up))
+                {
+                    if (
+                        _fightingSelectedPokemon >= 0
+                        && _fightingSelectedPokemon < _playerPositions.Count
+                    )
+                    {
+                        // Find the current selected row
+                        int currentRow = _playerPositions[_fightingSelectedPokemon].Value;
+
+                        // Find the next pokemon above (lower row number)
+                        int targetPokemon = -1;
+                        for (int row = currentRow - 1; row >= 0; row--)
+                        {
+                            for (int i = 0; i < _playerPositions.Count; i++)
+                            {
+                                if (_playerPositions[i] == row)
+                                {
+                                    targetPokemon = i;
+                                    break;
+                                }
+                            }
+                            if (targetPokemon != -1)
+                                break;
+                        }
+
+                        // If no pokemon above, wrap to bottom
+                        if (targetPokemon == -1)
+                        {
+                            for (int row = BOARD_SIZE - 1; row > currentRow; row--)
+                            {
+                                for (int i = 0; i < _playerPositions.Count; i++)
+                                {
+                                    if (_playerPositions[i] == row)
+                                    {
+                                        targetPokemon = i;
+                                        break;
+                                    }
+                                }
+                                if (targetPokemon != -1)
+                                    break;
+                            }
+                        }
+
+                        if (targetPokemon != -1)
+                        {
+                            _fightingSelectedPokemon = targetPokemon;
+                        }
+                    }
+                }
+                if (keyboardState.IsKeyDown(Keys.Down) && _previousKeyboardState.IsKeyUp(Keys.Down))
+                {
+                    if (
+                        _fightingSelectedPokemon >= 0
+                        && _fightingSelectedPokemon < _playerPositions.Count
+                    )
+                    {
+                        // Find the current selected row
+                        int currentRow = _playerPositions[_fightingSelectedPokemon].Value;
+
+                        // Find the next pokemon below (higher row number)
+                        int targetPokemon = -1;
+                        for (int row = currentRow + 1; row < BOARD_SIZE; row++)
+                        {
+                            for (int i = 0; i < _playerPositions.Count; i++)
+                            {
+                                if (_playerPositions[i] == row)
+                                {
+                                    targetPokemon = i;
+                                    break;
+                                }
+                            }
+                            if (targetPokemon != -1)
+                                break;
+                        }
+
+                        // If no pokemon below, wrap to top
+                        if (targetPokemon == -1)
+                        {
+                            for (int row = 0; row < currentRow; row++)
+                            {
+                                for (int i = 0; i < _playerPositions.Count; i++)
+                                {
+                                    if (_playerPositions[i] == row)
+                                    {
+                                        targetPokemon = i;
+                                        break;
+                                    }
+                                }
+                                if (targetPokemon != -1)
+                                    break;
+                            }
+                        }
+
+                        if (targetPokemon != -1)
+                        {
+                            _fightingSelectedPokemon = targetPokemon;
+                        }
+                    }
+                }
+
+                // Select pokemon with number keys (based on their row position)
+                if (keyboardState.IsKeyDown(Keys.D1) && _previousKeyboardState.IsKeyUp(Keys.D1))
+                {
+                    // Find pokemon in row 0
+                    for (int i = 0; i < _playerPositions.Count; i++)
+                    {
+                        if (_playerPositions[i] == 0)
+                        {
+                            _fightingSelectedPokemon = i;
+                            break;
+                        }
+                    }
+                }
+                if (keyboardState.IsKeyDown(Keys.D2) && _previousKeyboardState.IsKeyUp(Keys.D2))
+                {
+                    // Find pokemon in row 1
+                    for (int i = 0; i < _playerPositions.Count; i++)
+                    {
+                        if (_playerPositions[i] == 1)
+                        {
+                            _fightingSelectedPokemon = i;
+                            break;
+                        }
+                    }
+                }
+                if (keyboardState.IsKeyDown(Keys.D3) && _previousKeyboardState.IsKeyUp(Keys.D3))
+                {
+                    // Find pokemon in row 2
+                    for (int i = 0; i < _playerPositions.Count; i++)
+                    {
+                        if (_playerPositions[i] == 2)
+                        {
+                            _fightingSelectedPokemon = i;
+                            break;
+                        }
+                    }
+                }
+
+                // Confirm selection with Enter or Space
+                if (
+                    (
+                        keyboardState.IsKeyDown(Keys.Enter)
+                        && _previousKeyboardState.IsKeyUp(Keys.Enter)
+                    )
+                    || (
+                        keyboardState.IsKeyDown(Keys.Space)
+                        && _previousKeyboardState.IsKeyUp(Keys.Space)
+                    )
+                )
+                {
+                    if (_fightingSelectedPokemon >= 0)
+                    {
+                        _currentAction = BattleAction.SelectingAction;
+                        _selectedActionOption = 0;
+                    }
+                }
+            }
+            else if (_currentAction == BattleAction.SelectingAction)
+            {
+                // Navigate between Move and Attack options
+                if (keyboardState.IsKeyDown(Keys.Up) && _previousKeyboardState.IsKeyUp(Keys.Up))
+                {
+                    _selectedActionOption = 0; // Move
+                }
+                if (keyboardState.IsKeyDown(Keys.Down) && _previousKeyboardState.IsKeyUp(Keys.Down))
+                {
+                    _selectedActionOption = 1; // Attack
+                }
+                if (keyboardState.IsKeyDown(Keys.D1) && _previousKeyboardState.IsKeyUp(Keys.D1))
+                {
+                    _selectedActionOption = 0; // Move
+                }
+                if (keyboardState.IsKeyDown(Keys.D2) && _previousKeyboardState.IsKeyUp(Keys.D2))
+                {
+                    _selectedActionOption = 1; // Attack
+                }
+
+                // Confirm action selection
+                if (
+                    (
+                        keyboardState.IsKeyDown(Keys.Enter)
+                        && _previousKeyboardState.IsKeyUp(Keys.Enter)
+                    )
+                    || (
+                        keyboardState.IsKeyDown(Keys.Space)
+                        && _previousKeyboardState.IsKeyUp(Keys.Space)
+                    )
+                )
+                {
+                    _currentAction = BattleAction.SelectingTarget;
+                }
+
+                // Cancel back to pokemon selection
+                if (
+                    (
+                        keyboardState.IsKeyDown(Keys.Escape)
+                        && _previousKeyboardState.IsKeyUp(Keys.Escape)
+                    )
+                    || (
+                        keyboardState.IsKeyDown(Keys.Back)
+                        && _previousKeyboardState.IsKeyUp(Keys.Back)
+                    )
+                )
+                {
+                    _currentAction = BattleAction.SelectingPokemon;
+                }
+            }
+            else if (_currentAction == BattleAction.SelectingTarget)
+            {
+                // For now, just allow canceling back to action selection
+                if (
+                    (
+                        keyboardState.IsKeyDown(Keys.Escape)
+                        && _previousKeyboardState.IsKeyUp(Keys.Escape)
+                    )
+                    || (
+                        keyboardState.IsKeyDown(Keys.Back)
+                        && _previousKeyboardState.IsKeyUp(Keys.Back)
+                    )
+                )
+                {
+                    _currentAction = BattleAction.SelectingAction;
+                }
+            }
+
             // Check for F9 key press to win battle (placeholder for testing)
             if (keyboardState.IsKeyDown(Keys.F9) && _previousKeyboardState.IsKeyUp(Keys.F9))
             {
@@ -328,8 +581,11 @@ public class BattleScene
             // Draw positioned Pokemon on the board
             DrawPokemonOnBoard(spriteBatch, boardX, boardY);
 
+            // Draw fighting phase UI (pokemon selection, action menu, ranges)
+            DrawFightingPhaseUI(spriteBatch, boardX, boardY, centerX);
+
             // Draw instructions at the bottom
-            string instructions = "Battle in Progress - Press F9 to win (placeholder for testing)";
+            string instructions = GetFightingPhaseInstructions();
             Vector2 instructionsSize = _font.MeasureString(instructions);
             DrawTextWithBackground(
                 spriteBatch,
@@ -337,6 +593,245 @@ public class BattleScene
                 new Vector2(centerX - instructionsSize.X / 2, Settings.WINDOW_HEIGHT - 40),
                 Color.Yellow
             );
+        }
+    }
+
+    private string GetFightingPhaseInstructions()
+    {
+        switch (_currentAction)
+        {
+            case BattleAction.SelectingPokemon:
+                return "UP/DOWN: Navigate Board | 1-3: Jump to Row | ENTER/SPACE: Confirm | F9: Win (test)";
+            case BattleAction.SelectingAction:
+                return "UP/DOWN or 1-2: Select Action | ENTER/SPACE: Confirm | BACKSPACE: Back";
+            case BattleAction.SelectingTarget:
+                return "Select Target (Coming Soon) | BACKSPACE: Back";
+            default:
+                return "Battle in Progress";
+        }
+    }
+
+    private void DrawFightingPhaseUI(SpriteBatch spriteBatch, int boardX, int boardY, int centerX)
+    {
+        // Draw pokemon selection panel on the left
+        DrawPokemonSelectionPanel(spriteBatch);
+
+        // Draw action menu when a pokemon is selected
+        if (_currentAction == BattleAction.SelectingAction)
+        {
+            DrawActionMenu(spriteBatch, centerX);
+        }
+
+        // Draw range indicators on board
+        if (_fightingSelectedPokemon >= 0)
+        {
+            DrawRangeIndicators(spriteBatch, boardX, boardY);
+        }
+    }
+
+    private void DrawPokemonSelectionPanel(SpriteBatch spriteBatch)
+    {
+        int panelX = 20;
+        int panelY = 150;
+        int panelWidth = 300;
+
+        // Draw panel background
+        spriteBatch.Draw(
+            _pixelTexture,
+            new Rectangle(panelX, panelY, panelWidth, _player.Monsters.Count * 80 + 40),
+            Color.Black * 0.8f
+        );
+
+        // Draw title
+        DrawTextWithBackground(
+            spriteBatch,
+            "YOUR POKEMON",
+            new Vector2(panelX + 10, panelY + 10),
+            Color.Cyan
+        );
+
+        // Draw each pokemon
+        for (int i = 0; i < _player.Monsters.Count; i++)
+        {
+            var monsterName = _player.Monsters[i];
+            bool isSelected = i == _fightingSelectedPokemon;
+            int yPos = panelY + 50 + i * 80;
+
+            // Highlight selected pokemon
+            if (isSelected)
+            {
+                spriteBatch.Draw(
+                    _pixelTexture,
+                    new Rectangle(panelX + 5, yPos - 5, panelWidth - 10, 70),
+                    Color.Yellow * 0.3f
+                );
+            }
+
+            // Draw pokemon info
+            string indicator = isSelected ? ">>>" : "   ";
+            string info = $"{indicator} {i + 1}. {monsterName}";
+            Color textColor = isSelected ? Color.Yellow : Color.White;
+
+            DrawTextWithBackground(spriteBatch, info, new Vector2(panelX + 10, yPos), textColor);
+
+            // Draw position
+            if (_playerPositions[i] != null)
+            {
+                string posInfo = $"     Row {_playerPositions[i].Value + 1}";
+                DrawTextWithBackground(
+                    spriteBatch,
+                    posInfo,
+                    new Vector2(panelX + 10, yPos + 25),
+                    Color.LightGray
+                );
+            }
+        }
+    }
+
+    private void DrawActionMenu(SpriteBatch spriteBatch, int centerX)
+    {
+        int menuWidth = 300;
+        int menuHeight = 200;
+        int menuX = centerX - menuWidth / 2;
+        int menuY = 100;
+
+        // Draw menu background
+        spriteBatch.Draw(
+            _pixelTexture,
+            new Rectangle(menuX, menuY, menuWidth, menuHeight),
+            Color.Black * 0.9f
+        );
+
+        // Draw border
+        DrawRectangleBorder(
+            spriteBatch,
+            new Rectangle(menuX, menuY, menuWidth, menuHeight),
+            Color.Gold,
+            3
+        );
+
+        // Draw title
+        var monsterName = _player.Monsters[_fightingSelectedPokemon];
+        string title = $"Action for {monsterName}";
+        Vector2 titleSize = _font.MeasureString(title);
+        DrawTextWithBackground(
+            spriteBatch,
+            title,
+            new Vector2(menuX + menuWidth / 2 - titleSize.X / 2, menuY + 20),
+            Color.Gold
+        );
+
+        // Get pokemon stats
+        var monsterData = GameData.Monsters[monsterName];
+        int moveRange = monsterData.Stats.Movement;
+        int attackRange = monsterData.Stats.Range;
+
+        // Draw Move option
+        bool moveSelected = _selectedActionOption == 0;
+        Color moveColor = moveSelected ? Color.Yellow : Color.White;
+        string moveText = moveSelected ? ">>> 1. MOVE" : "    1. MOVE";
+        DrawTextWithBackground(
+            spriteBatch,
+            moveText,
+            new Vector2(menuX + 30, menuY + 70),
+            moveColor
+        );
+        DrawTextWithBackground(
+            spriteBatch,
+            $"    Range: {moveRange} cells",
+            new Vector2(menuX + 30, menuY + 95),
+            Color.LightGray
+        );
+
+        // Draw Attack option
+        bool attackSelected = _selectedActionOption == 1;
+        Color attackColor = attackSelected ? Color.Yellow : Color.White;
+        string attackText = attackSelected ? ">>> 2. ATTACK" : "    2. ATTACK";
+        DrawTextWithBackground(
+            spriteBatch,
+            attackText,
+            new Vector2(menuX + 30, menuY + 130),
+            attackColor
+        );
+        DrawTextWithBackground(
+            spriteBatch,
+            $"    Range: {attackRange} cells",
+            new Vector2(menuX + 30, menuY + 155),
+            Color.LightGray
+        );
+    }
+
+    private void DrawRangeIndicators(SpriteBatch spriteBatch, int boardX, int boardY)
+    {
+        if (_playerPositions[_fightingSelectedPokemon] == null)
+            return;
+
+        int pokemonRow = _playerPositions[_fightingSelectedPokemon].Value;
+        int pokemonCol = 0; // Player pokemon are always in column 0
+
+        // Get pokemon stats
+        var monsterName = _player.Monsters[_fightingSelectedPokemon];
+        var monsterData = GameData.Monsters[monsterName];
+        int moveRange = monsterData.Stats.Movement;
+        int attackRange = monsterData.Stats.Range;
+
+        // Determine which range to show
+        int range = 0;
+        Color rangeColor = Color.White;
+
+        if (_currentAction == BattleAction.SelectingAction)
+        {
+            // Show the currently selected action's range
+            if (_selectedActionOption == 0)
+            {
+                range = moveRange;
+                rangeColor = Color.Blue * 0.4f; // Blue for movement
+            }
+            else
+            {
+                range = attackRange;
+                rangeColor = Color.Red * 0.4f; // Red for attack
+            }
+        }
+        else if (_currentAction == BattleAction.SelectingTarget)
+        {
+            // Show range based on confirmed action
+            if (_selectedActionOption == 0)
+            {
+                range = moveRange;
+                rangeColor = Color.Blue * 0.4f;
+            }
+            else
+            {
+                range = attackRange;
+                rangeColor = Color.Red * 0.4f;
+            }
+        }
+
+        // Draw range indicators
+        if (range > 0)
+        {
+            for (int row = 0; row < BOARD_SIZE; row++)
+            {
+                for (int col = 0; col < BOARD_SIZE; col++)
+                {
+                    // Calculate Manhattan distance
+                    int distance = Math.Abs(row - pokemonRow) + Math.Abs(col - pokemonCol);
+
+                    if (distance > 0 && distance <= range)
+                    {
+                        int x = boardX + col * CELL_SIZE;
+                        int y = boardY + row * CELL_SIZE;
+
+                        // Draw range highlight
+                        spriteBatch.Draw(
+                            _pixelTexture,
+                            new Rectangle(x + 2, y + 2, CELL_SIZE - 4, CELL_SIZE - 4),
+                            rangeColor
+                        );
+                    }
+                }
+            }
         }
     }
 
@@ -377,7 +872,7 @@ public class BattleScene
         int startY = 150;
         for (int i = 0; i < _player.Monsters.Count; i++)
         {
-            var monster = _player.Monsters[i];
+            var monsterName = _player.Monsters[i];
             bool isSelected = i == _selectedMonsterIndex;
             bool isPlaced = _playerPositions[i] != null;
 
@@ -388,7 +883,7 @@ public class BattleScene
             // Draw monster name with visual indicator
             string indicator = isSelected ? ">>>" : "   ";
 
-            string monsterText = $"{indicator} {i + 1}. {monster.Name} (Lv.{monster.Level})";
+            string monsterText = $"{indicator} {i + 1}. {monsterName}";
             DrawTextWithBackground(spriteBatch, monsterText, new Vector2(50, yPos), textColor);
 
             // Draw position indicator
@@ -396,7 +891,7 @@ public class BattleScene
             DrawTextWithBackground(spriteBatch, posText, new Vector2(50, yPos + 25), textColor);
 
             // Draw Pokemon sprite if available
-            string textureName = monster.Name.ToLower();
+            string textureName = monsterName.ToLower();
             if (_pokemonTextures.ContainsKey(textureName))
             {
                 spriteBatch.Draw(
@@ -525,8 +1020,8 @@ public class BattleScene
             if (_playerPositions[i] == null)
                 continue;
 
-            var monster = _player.Monsters[i];
-            string textureName = monster.Name.ToLower();
+            var monsterName = _player.Monsters[i];
+            string textureName = monsterName.ToLower();
 
             if (!_pokemonTextures.ContainsKey(textureName))
                 continue;
@@ -534,6 +1029,21 @@ public class BattleScene
             int row = _playerPositions[i].Value;
             int cellX = boardX + 2;
             int cellY = boardY + row * CELL_SIZE + 2;
+
+            // Check if this pokemon is selected during fighting phase
+            bool isSelectedInFighting =
+                _currentPhase == BattlePhase.Fighting && i == _fightingSelectedPokemon;
+
+            // Draw highlight if selected during fighting phase
+            if (isSelectedInFighting)
+            {
+                // Draw a bright highlight around the selected pokemon's cell
+                spriteBatch.Draw(
+                    _pixelTexture,
+                    new Rectangle(cellX, cellY, CELL_SIZE - 4, CELL_SIZE - 4),
+                    Color.Yellow * 0.5f
+                );
+            }
 
             var pokemonTexture = _pokemonTextures[textureName];
             float scale = (CELL_SIZE - 20) / (float)pokemonTexture.Width;

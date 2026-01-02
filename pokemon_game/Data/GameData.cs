@@ -12,7 +12,7 @@ public static class GameData
         {
             "o1",
             new TrainerData(
-                new Dictionary<int, (string, int)> { { 0, ("Jacana", 14) }, { 1, ("Cleaf", 15) } },
+                new Dictionary<int, string> { { 0, "Bulbasaur" }, { 1, "Charmander" } },
                 new Dictionary<string, List<string>>
                 {
                     {
@@ -38,12 +38,12 @@ public static class GameData
         {
             "o2",
             new TrainerData(
-                new Dictionary<int, (string, int)>
+                new Dictionary<int, string>
                 {
-                    { 0, ("Atrox", 14) },
-                    { 1, ("Pouch", 15) },
-                    { 2, ("Draem", 13) },
-                    { 3, ("Cindrill", 13) },
+                    { 0, "Squirtle" },
+                    { 1, "Bulbasaur" },
+                    { 2, "Charmander" },
+                    { 3, "Squirtle" },
                 },
                 new Dictionary<string, List<string>>
                 {
@@ -70,12 +70,12 @@ public static class GameData
         {
             "o3",
             new TrainerData(
-                new Dictionary<int, (string, int)>
+                new Dictionary<int, string>
                 {
-                    { 0, ("Atrox", 14) },
-                    { 1, ("Pouch", 15) },
-                    { 2, ("Draem", 13) },
-                    { 3, ("Cindrill", 13) },
+                    { 0, "Bulbasaur" },
+                    { 1, "Charmander" },
+                    { 2, "Squirtle" },
+                    { 3, "Bulbasaur" },
                 },
                 new Dictionary<string, List<string>>
                 {
@@ -97,12 +97,12 @@ public static class GameData
         {
             "o4",
             new TrainerData(
-                new Dictionary<int, (string, int)>
+                new Dictionary<int, string>
                 {
-                    { 0, ("Friolera", 25) },
-                    { 1, ("Gulfin", 20) },
-                    { 2, ("Atrox", 24) },
-                    { 3, ("Finiette", 30) },
+                    { 0, "Charmander" },
+                    { 1, "Squirtle" },
+                    { 2, "Bulbasaur" },
+                    { 3, "Charmander" },
                 },
                 new Dictionary<string, List<string>>
                 {
@@ -124,12 +124,12 @@ public static class GameData
         {
             "o5",
             new TrainerData(
-                new Dictionary<int, (string, int)>
+                new Dictionary<int, string>
                 {
-                    { 0, ("Plumette", 20) },
-                    { 1, ("Ivieron", 22) },
-                    { 2, ("Atrox", 24) },
-                    { 3, ("Pouch", 19) },
+                    { 0, "Squirtle" },
+                    { 1, "Bulbasaur" },
+                    { 2, "Charmander" },
+                    { 3, "Squirtle" },
                 },
                 new Dictionary<string, List<string>>
                 {
@@ -151,11 +151,11 @@ public static class GameData
         {
             "o6",
             new TrainerData(
-                new Dictionary<int, (string, int)>
+                new Dictionary<int, string>
                 {
-                    { 0, ("Finsta", 15) },
-                    { 1, ("Finsta", 15) },
-                    { 2, ("Finsta", 15) },
+                    { 0, "Bulbasaur" },
+                    { 1, "Charmander" },
+                    { 2, "Squirtle" },
                 },
                 new Dictionary<string, List<string>>
                 {
@@ -177,12 +177,12 @@ public static class GameData
         {
             "o7",
             new TrainerData(
-                new Dictionary<int, (string, int)>
+                new Dictionary<int, string>
                 {
-                    { 0, ("Friolera", 25) },
-                    { 1, ("Gulfin", 20) },
-                    { 2, ("Atrox", 24) },
-                    { 3, ("Finiette", 30) },
+                    { 0, "Charmander" },
+                    { 1, "Squirtle" },
+                    { 2, "Bulbasaur" },
+                    { 3, "Charmander" },
                 },
                 new Dictionary<string, List<string>>
                 {
@@ -208,12 +208,12 @@ public static class GameData
         {
             "p1",
             new TrainerData(
-                new Dictionary<int, (string, int)>
+                new Dictionary<int, string>
                 {
-                    { 0, ("Friolera", 25) },
-                    { 1, ("Gulfin", 20) },
-                    { 2, ("Atrox", 24) },
-                    { 3, ("Finiette", 30) },
+                    { 0, "Squirtle" },
+                    { 1, "Bulbasaur" },
+                    { 2, "Charmander" },
+                    { 3, "Squirtle" },
                 },
                 new Dictionary<string, List<string>>
                 {
@@ -235,12 +235,12 @@ public static class GameData
         {
             "p2",
             new TrainerData(
-                new Dictionary<int, (string, int)>
+                new Dictionary<int, string>
                 {
-                    { 0, ("Friolera", 25) },
-                    { 1, ("Gulfin", 20) },
-                    { 2, ("Atrox", 24) },
-                    { 3, ("Finiette", 30) },
+                    { 0, "Bulbasaur" },
+                    { 1, "Charmander" },
+                    { 2, "Squirtle" },
+                    { 3, "Bulbasaur" },
                 },
                 new Dictionary<string, List<string>>
                 {
@@ -262,12 +262,12 @@ public static class GameData
         {
             "p3",
             new TrainerData(
-                new Dictionary<int, (string, int)>
+                new Dictionary<int, string>
                 {
-                    { 0, ("Friolera", 25) },
-                    { 1, ("Gulfin", 20) },
-                    { 2, ("Atrox", 24) },
-                    { 3, ("Finiette", 30) },
+                    { 0, "Charmander" },
+                    { 1, "Squirtle" },
+                    { 2, "Bulbasaur" },
+                    { 3, "Charmander" },
                 },
                 new Dictionary<string, List<string>>
                 {
@@ -289,12 +289,12 @@ public static class GameData
         {
             "p4",
             new TrainerData(
-                new Dictionary<int, (string, int)>
+                new Dictionary<int, string>
                 {
-                    { 0, ("Friolera", 25) },
-                    { 1, ("Gulfin", 20) },
-                    { 2, ("Atrox", 24) },
-                    { 3, ("Finiette", 30) },
+                    { 0, "Squirtle" },
+                    { 1, "Bulbasaur" },
+                    { 2, "Charmander" },
+                    { 3, "Squirtle" },
                 },
                 new Dictionary<string, List<string>>
                 {
@@ -316,12 +316,12 @@ public static class GameData
         {
             "px",
             new TrainerData(
-                new Dictionary<int, (string, int)>
+                new Dictionary<int, string>
                 {
-                    { 0, ("Friolera", 25) },
-                    { 1, ("Gulfin", 20) },
-                    { 2, ("Atrox", 24) },
-                    { 3, ("Finiette", 30) },
+                    { 0, "Bulbasaur" },
+                    { 1, "Charmander" },
+                    { 2, "Squirtle" },
+                    { 3, "Bulbasaur" },
                 },
                 new Dictionary<string, List<string>>
                 {
@@ -343,12 +343,12 @@ public static class GameData
         {
             "w1",
             new TrainerData(
-                new Dictionary<int, (string, int)>
+                new Dictionary<int, string>
                 {
-                    { 0, ("Friolera", 25) },
-                    { 1, ("Gulfin", 20) },
-                    { 2, ("Draem", 24) },
-                    { 3, ("Finiette", 30) },
+                    { 0, "Charmander" },
+                    { 1, "Squirtle" },
+                    { 2, "Bulbasaur" },
+                    { 3, "Charmander" },
                 },
                 new Dictionary<string, List<string>>
                 {
@@ -370,12 +370,12 @@ public static class GameData
         {
             "w2",
             new TrainerData(
-                new Dictionary<int, (string, int)>
+                new Dictionary<int, string>
                 {
-                    { 0, ("Friolera", 25) },
-                    { 1, ("Gulfin", 20) },
-                    { 2, ("Draem", 24) },
-                    { 3, ("Finiette", 30) },
+                    { 0, "Squirtle" },
+                    { 1, "Bulbasaur" },
+                    { 2, "Charmander" },
+                    { 3, "Squirtle" },
                 },
                 new Dictionary<string, List<string>>
                 {
@@ -397,12 +397,12 @@ public static class GameData
         {
             "w3",
             new TrainerData(
-                new Dictionary<int, (string, int)>
+                new Dictionary<int, string>
                 {
-                    { 0, ("Friolera", 25) },
-                    { 1, ("Gulfin", 20) },
-                    { 2, ("Draem", 24) },
-                    { 3, ("Finiette", 30) },
+                    { 0, "Bulbasaur" },
+                    { 1, "Charmander" },
+                    { 2, "Squirtle" },
+                    { 3, "Bulbasaur" },
                 },
                 new Dictionary<string, List<string>>
                 {
@@ -424,12 +424,12 @@ public static class GameData
         {
             "w4",
             new TrainerData(
-                new Dictionary<int, (string, int)>
+                new Dictionary<int, string>
                 {
-                    { 0, ("Friolera", 25) },
-                    { 1, ("Gulfin", 20) },
-                    { 2, ("Draem", 24) },
-                    { 3, ("Finiette", 30) },
+                    { 0, "Charmander" },
+                    { 1, "Squirtle" },
+                    { 2, "Bulbasaur" },
+                    { 3, "Charmander" },
                 },
                 new Dictionary<string, List<string>>
                 {
@@ -451,12 +451,12 @@ public static class GameData
         {
             "w5",
             new TrainerData(
-                new Dictionary<int, (string, int)>
+                new Dictionary<int, string>
                 {
-                    { 0, ("Friolera", 25) },
-                    { 1, ("Gulfin", 20) },
-                    { 2, ("Draem", 24) },
-                    { 3, ("Finiette", 30) },
+                    { 0, "Squirtle" },
+                    { 1, "Bulbasaur" },
+                    { 2, "Charmander" },
+                    { 3, "Squirtle" },
                 },
                 new Dictionary<string, List<string>>
                 {
@@ -478,12 +478,12 @@ public static class GameData
         {
             "wx",
             new TrainerData(
-                new Dictionary<int, (string, int)>
+                new Dictionary<int, string>
                 {
-                    { 0, ("Friolera", 25) },
-                    { 1, ("Gulfin", 20) },
-                    { 2, ("Draem", 24) },
-                    { 3, ("Finiette", 30) },
+                    { 0, "Bulbasaur" },
+                    { 1, "Charmander" },
+                    { 2, "Squirtle" },
+                    { 3, "Bulbasaur" },
                 },
                 new Dictionary<string, List<string>>
                 {
@@ -505,12 +505,12 @@ public static class GameData
         {
             "f1",
             new TrainerData(
-                new Dictionary<int, (string, int)>
+                new Dictionary<int, string>
                 {
-                    { 0, ("Cindrill", 15) },
-                    { 1, ("Jacana", 20) },
-                    { 2, ("Draem", 24) },
-                    { 3, ("Atrox", 30) },
+                    { 0, "Charmander" },
+                    { 1, "Squirtle" },
+                    { 2, "Bulbasaur" },
+                    { 3, "Charmander" },
                 },
                 new Dictionary<string, List<string>>
                 {
@@ -532,12 +532,12 @@ public static class GameData
         {
             "f2",
             new TrainerData(
-                new Dictionary<int, (string, int)>
+                new Dictionary<int, string>
                 {
-                    { 0, ("Cindrill", 15) },
-                    { 1, ("Jacana", 20) },
-                    { 2, ("Draem", 24) },
-                    { 3, ("Atrox", 30) },
+                    { 0, "Squirtle" },
+                    { 1, "Bulbasaur" },
+                    { 2, "Charmander" },
+                    { 3, "Squirtle" },
                 },
                 new Dictionary<string, List<string>>
                 {
@@ -559,12 +559,12 @@ public static class GameData
         {
             "f3",
             new TrainerData(
-                new Dictionary<int, (string, int)>
+                new Dictionary<int, string>
                 {
-                    { 0, ("Cindrill", 15) },
-                    { 1, ("Jacana", 20) },
-                    { 2, ("Draem", 24) },
-                    { 3, ("Atrox", 30) },
+                    { 0, "Bulbasaur" },
+                    { 1, "Charmander" },
+                    { 2, "Squirtle" },
+                    { 3, "Bulbasaur" },
                 },
                 new Dictionary<string, List<string>>
                 {
@@ -586,12 +586,12 @@ public static class GameData
         {
             "f4",
             new TrainerData(
-                new Dictionary<int, (string, int)>
+                new Dictionary<int, string>
                 {
-                    { 0, ("Cindrill", 15) },
-                    { 1, ("Jacana", 20) },
-                    { 2, ("Draem", 24) },
-                    { 3, ("Atrox", 30) },
+                    { 0, "Charmander" },
+                    { 1, "Squirtle" },
+                    { 2, "Bulbasaur" },
+                    { 3, "Charmander" },
                 },
                 new Dictionary<string, List<string>>
                 {
@@ -613,12 +613,12 @@ public static class GameData
         {
             "f5",
             new TrainerData(
-                new Dictionary<int, (string, int)>
+                new Dictionary<int, string>
                 {
-                    { 0, ("Cindrill", 15) },
-                    { 1, ("Jacana", 20) },
-                    { 2, ("Draem", 24) },
-                    { 3, ("Atrox", 30) },
+                    { 0, "Squirtle" },
+                    { 1, "Bulbasaur" },
+                    { 2, "Charmander" },
+                    { 3, "Squirtle" },
                 },
                 new Dictionary<string, List<string>>
                 {
@@ -640,12 +640,12 @@ public static class GameData
         {
             "f6",
             new TrainerData(
-                new Dictionary<int, (string, int)>
+                new Dictionary<int, string>
                 {
-                    { 0, ("Cindrill", 15) },
-                    { 1, ("Jacana", 20) },
-                    { 2, ("Draem", 24) },
-                    { 3, ("Atrox", 30) },
+                    { 0, "Bulbasaur" },
+                    { 1, "Charmander" },
+                    { 2, "Squirtle" },
+                    { 3, "Bulbasaur" },
                 },
                 new Dictionary<string, List<string>>
                 {
@@ -667,12 +667,12 @@ public static class GameData
         {
             "fx",
             new TrainerData(
-                new Dictionary<int, (string, int)>
+                new Dictionary<int, string>
                 {
-                    { 0, ("Cindrill", 15) },
-                    { 1, ("Jacana", 20) },
-                    { 2, ("Draem", 24) },
-                    { 3, ("Atrox", 30) },
+                    { 0, "Charmander" },
+                    { 1, "Squirtle" },
+                    { 2, "Bulbasaur" },
+                    { 3, "Charmander" },
                 },
                 new Dictionary<string, List<string>>
                 {
@@ -694,7 +694,7 @@ public static class GameData
         {
             "Nurse",
             new TrainerData(
-                new Dictionary<int, (string, int)>(),
+                new Dictionary<int, string>(),
                 new Dictionary<string, List<string>>
                 {
                     {

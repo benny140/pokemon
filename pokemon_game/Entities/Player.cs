@@ -10,9 +10,9 @@ namespace pokemon_game.Entities;
 public class Player : Character
 {
     private CollisionManager _collisionManager;
-    private List<(string Name, int Level)> _monsters;
+    private List<string> _monsters;
 
-    public List<(string Name, int Level)> Monsters => _monsters;
+    public List<string> Monsters => _monsters;
 
     public Player(
         Texture2D texture,
@@ -24,12 +24,7 @@ public class Player : Character
         _collisionManager = collisionManager;
 
         // Initialize player with starter Pokemon
-        _monsters = new List<(string Name, int Level)>
-        {
-            ("Bulbasaur", 5),
-            ("Charmander", 5),
-            ("Squirtle", 5),
-        };
+        _monsters = new List<string> { "Bulbasaur", "Charmander", "Squirtle" };
     }
 
     public Rectangle GetBounds()

@@ -4,7 +4,7 @@ namespace pokemon_game.Data;
 
 public class TrainerData
 {
-    public Dictionary<int, (string Name, int Level)> Monsters { get; set; }
+    public Dictionary<int, string> Monsters { get; set; }
     public Dictionary<string, List<string>> Dialog { get; set; }
     public List<string> Directions { get; set; }
     public bool LookAround { get; set; }
@@ -13,7 +13,7 @@ public class TrainerData
     public bool CanBattle => Biome != null;
 
     public TrainerData(
-        Dictionary<int, (string Name, int Level)> monsters,
+        Dictionary<int, string> monsters,
         Dictionary<string, List<string>> dialog,
         List<string> directions,
         bool lookAround,
